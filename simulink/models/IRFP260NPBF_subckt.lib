@@ -1,0 +1,21 @@
+﻿* IRFP260NPBF SPICE subcircuit for Simscape import
+* Source parameters adapted from publicly available IRFP260N model data
+* Pin order: D G S
+
+.SUBCKT IRFP260NPBF D G S
+* External parasitics
+RG  G   GINT   6
+RD  DINT D      1e-4
+RS  SINT S      2.6764e-2
+RDS D    S      1e6
+
+* Intrinsic channel
+M1 DINT GINT SINT SINT MM
+
+* Body diode
+D1 D S MD
+
+.ENDS IRFP260NPBF
+
+.MODEL MM NMOS (LEVEL=1 IS=1E-32 VTO=4.36308 LAMBDA=9.43213 KP=24.971 CGSO=3.81166E-05 CGDO=1E-11)
+.MODEL MD D (IS=1.43789E-09 RS=0.00471658 N=1.25851 BV=200 IBV=0.00025 EG=1.2 XTI=1.05255 TT=9.99946E-05 CJO=3.21781E-09 VJ=2.53122 M=0.80474 FC=0.494537)

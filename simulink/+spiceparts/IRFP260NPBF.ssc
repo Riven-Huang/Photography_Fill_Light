@@ -1,0 +1,58 @@
+component IRFP260NPBF
+% IRFP260NPBF
+% 从 SPICE 网表自动生成的用于子电路 IRFP260NPBF 的组件。
+%   MATLAB 版本: 25.1。
+%   Simscape Electrical 版本: 25.1。
+%   Simscape 代码生成时间: 05-Mar-2026 14:48:36
+
+
+    nodes
+        d = foundation.electrical.electrical; % d
+        g = foundation.electrical.electrical; % g
+        s = foundation.electrical.electrical; % s
+    end
+
+    nodes(Access=protected, ExternalAccess=none)
+        gint = foundation.electrical.electrical;
+        dint = foundation.electrical.electrical;
+        sint = foundation.electrical.electrical;
+    end
+
+    components(ExternalAccess=observe)
+        RG = foundation.electrical.elements.resistor(R={6,'Ohm'});
+        RD = foundation.electrical.elements.resistor(R={1e-4,'Ohm'});
+        RS = foundation.electrical.elements.resistor(R={2.6764e-2,'Ohm'});
+        RDS = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        M1 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={1e-11,'F/m'},CGSO={3.8117e-05,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-32,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={24.971,'A/V^2'}, ...
+            LAMBDA={9.4321,'1/V'},LD={0,'m'},LENGTH={0.0001,'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={4.3631,'V'}, ...
+            XJ={0,'m'},WIDTH={0.0001,'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        D1 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1.4379e-09,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1.2585,'1'},NR={2,'1'},M={0.80474,'1'},VJ={2.5312,'V'},RS={0.0047166,'Ohm*m^2'}, ...
+            C_param={2,'1'},CJO={3.2178e-09,'F/m^2'},FC={0.49454,'1'},TT={9.9995e-05,'s'},RevBrk={2,'1'},BV={200,'V'}, ...
+            IBV={0.00025,'A/m^2'},IBVL={1e-10,'A/m^2'},NBV={1,'1'},NBVL={1,'1'},XTI={1.0526,'1'},EG={1.2,'eV'},TIKF={0,'K^-1'}, ...
+            TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'},TBV2={0,'K^-2'});
+    end
+
+    connections
+        connect(RG.p,g);
+        connect(RG.n,gint);
+        connect(RD.p,dint);
+        connect(RD.n,d);
+        connect(RS.p,sint);
+        connect(RS.n,s);
+        connect(RDS.p,d);
+        connect(RDS.n,s);
+        connect(M1.dx,dint);
+        connect(M1.gx,gint);
+        connect(M1.sx,sint);
+        connect(M1.bx,sint);
+        connect(D1.p,d);
+        connect(D1.n,s);
+    end
+
+end

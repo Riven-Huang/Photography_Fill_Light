@@ -1,0 +1,1048 @@
+component TLV2372
+% TLV2372
+% 从 SPICE 网表自动生成的用于子电路 TLV2372 的组件。
+%   MATLAB 版本: 25.1。
+%   Simscape Electrical 版本: 25.1。
+%   Simscape 代码生成时间: 05-Mar-2026 14:48:35
+%
+% subcircuit2ssc 函数不支持以下 SPICE 参数:
+%    D10: kf = 8e-12
+%    D9: kf = 8e-12
+% 如果可能，您必须手动实现它们才能获得完整的
+% 功能。 请参考 Simscape Electrical 的 Additional Components
+% 库中与对应转换相关的模块的
+% 文档页。
+
+
+    nodes
+        node_3 = foundation.electrical.electrical; % node_3
+        node_4 = foundation.electrical.electrical; % node_4
+        node_6 = foundation.electrical.electrical; % node_6
+        node_2 = foundation.electrical.electrical; % node_2
+        node_1 = foundation.electrical.electrical; % node_1
+    end
+
+    nodes(Access=protected, ExternalAccess=none)
+        node_5 = foundation.electrical.electrical;
+        node_7 = foundation.electrical.electrical;
+        node_8 = foundation.electrical.electrical;
+        node_9 = foundation.electrical.electrical;
+        node_10 = foundation.electrical.electrical;
+        node_11 = foundation.electrical.electrical;
+        node_12 = foundation.electrical.electrical;
+        node_13 = foundation.electrical.electrical;
+        node_14 = foundation.electrical.electrical;
+        node_15 = foundation.electrical.electrical;
+        node_16 = foundation.electrical.electrical;
+        node_17 = foundation.electrical.electrical;
+        node_18 = foundation.electrical.electrical;
+        node_19 = foundation.electrical.electrical;
+        node_20 = foundation.electrical.electrical;
+        node_21 = foundation.electrical.electrical;
+        node_22 = foundation.electrical.electrical;
+        node_23 = foundation.electrical.electrical;
+        node_24 = foundation.electrical.electrical;
+        node_25 = foundation.electrical.electrical;
+        node_26 = foundation.electrical.electrical;
+        node_27 = foundation.electrical.electrical;
+        node_28 = foundation.electrical.electrical;
+        node_29 = foundation.electrical.electrical;
+        node_30 = foundation.electrical.electrical;
+        node_31 = foundation.electrical.electrical;
+        node_32 = foundation.electrical.electrical;
+        node_34 = foundation.electrical.electrical;
+        node_35 = foundation.electrical.electrical;
+        node_36 = foundation.electrical.electrical;
+        node_37 = foundation.electrical.electrical;
+        node_38 = foundation.electrical.electrical;
+        node_33 = foundation.electrical.electrical;
+        node_39 = foundation.electrical.electrical;
+        node_40 = foundation.electrical.electrical;
+        node_41 = foundation.electrical.electrical;
+        node_42 = foundation.electrical.electrical;
+        node_43 = foundation.electrical.electrical;
+        node_44 = foundation.electrical.electrical;
+        node_45 = foundation.electrical.electrical;
+        node_46 = foundation.electrical.electrical;
+        node_47 = foundation.electrical.electrical;
+        node_48 = foundation.electrical.electrical;
+        node_49 = foundation.electrical.electrical;
+        node_50 = foundation.electrical.electrical;
+        node_51 = foundation.electrical.electrical;
+        node_52 = foundation.electrical.electrical;
+        node_53 = foundation.electrical.electrical;
+        node_55 = foundation.electrical.electrical;
+        node_56 = foundation.electrical.electrical;
+        node_57 = foundation.electrical.electrical;
+        node_58 = foundation.electrical.electrical;
+        node_59 = foundation.electrical.electrical;
+        node_60 = foundation.electrical.electrical;
+        node_61 = foundation.electrical.electrical;
+        node_62 = foundation.electrical.electrical;
+        node_54 = foundation.electrical.electrical;
+        node_63 = foundation.electrical.electrical;
+        node_64 = foundation.electrical.electrical;
+        node_65 = foundation.electrical.electrical;
+        node_66 = foundation.electrical.electrical;
+        node_68 = foundation.electrical.electrical;
+        node_69 = foundation.electrical.electrical;
+        node_70 = foundation.electrical.electrical;
+        node_71 = foundation.electrical.electrical;
+        node_72 = foundation.electrical.electrical;
+        node_73 = foundation.electrical.electrical;
+        node_74 = foundation.electrical.electrical;
+        node_75 = foundation.electrical.electrical;
+        node_76 = foundation.electrical.electrical;
+        node_77 = foundation.electrical.electrical;
+        node_78 = foundation.electrical.electrical;
+        node_67 = foundation.electrical.electrical;
+        node_79 = foundation.electrical.electrical;
+        node_80 = foundation.electrical.electrical;
+        node_81 = foundation.electrical.electrical;
+        node_82 = foundation.electrical.electrical;
+        node_83 = foundation.electrical.electrical;
+        node_84 = foundation.electrical.electrical;
+        node_85 = foundation.electrical.electrical;
+        node_86 = foundation.electrical.electrical;
+        node_87 = foundation.electrical.electrical;
+        node_88 = foundation.electrical.electrical;
+        node_89 = foundation.electrical.electrical;
+        node_90 = foundation.electrical.electrical;
+        node_91 = foundation.electrical.electrical;
+        node_92 = foundation.electrical.electrical;
+        node_93 = foundation.electrical.electrical;
+        node_94 = foundation.electrical.electrical;
+        node_95 = foundation.electrical.electrical;
+        node_97 = foundation.electrical.electrical;
+        node_98 = foundation.electrical.electrical;
+        node_99 = foundation.electrical.electrical;
+        node_100 = foundation.electrical.electrical;
+        node_96 = foundation.electrical.electrical;
+    end
+
+    annotations
+        UILayout = [
+            UIGroup('寄生元素', ...
+                    specifyParasiticValues, capacitorSeriesResistance, inductorParallelConductance)
+                   ]
+    end
+
+    parameters
+        specifyParasiticValues = ee.enum.include.no;    % 指定寄生值
+    end
+
+    parameters(ExternalAccess=none)
+        capacitorSeriesResistance = {0, 'Ohm'};    % 电容器寄生串联电阻
+        inductorParallelConductance = {0, '1/Ohm'};    % 电感器寄生并联电导
+    end
+
+    if specifyParasiticValues == ee.enum.include.yes
+        annotations
+            [capacitorSeriesResistance, inductorParallelConductance] : ExternalAccess=modify;
+        end
+    end
+
+    variables
+        E2 = {value={0,'A'},priority=priority.none};
+        E3 = {value={0,'A'},priority=priority.none};
+        E4 = {value={0,'A'},priority=priority.none};
+        G2 = {value={0,'A'},priority=priority.none};
+        E5 = {value={0,'A'},priority=priority.none};
+        E6 = {value={0,'A'},priority=priority.none};
+        E7 = {value={0,'A'},priority=priority.none};
+        E10 = {value={0,'A'},priority=priority.none};
+        E11 = {value={0,'A'},priority=priority.none};
+        E12 = {value={0,'A'},priority=priority.none};
+        E14 = {value={0,'A'},priority=priority.none};
+        G3 = {value={0,'A'},priority=priority.none};
+        E17 = {value={0,'A'},priority=priority.none};
+        E18 = {value={0,'A'},priority=priority.none};
+        E20 = {value={0,'A'},priority=priority.none};
+        G7 = {value={0,'A'},priority=priority.none};
+        G8 = {value={0,'A'},priority=priority.none};
+        G9 = {value={0,'A'},priority=priority.none};
+        G10 = {value={0,'A'},priority=priority.none};
+        E23 = {value={0,'A'},priority=priority.none};
+        E24 = {value={0,'A'},priority=priority.none};
+        G11 = {value={0,'A'},priority=priority.none};
+        G14 = {value={0,'A'},priority=priority.none};
+        G15 = {value={0,'A'},priority=priority.none};
+        E48 = {value={0,'A'},priority=priority.none};
+        E49 = {value={0,'A'},priority=priority.none};
+        E50 = {value={0,'A'},priority=priority.none};
+        E94 = {value={0,'A'},priority=priority.none};
+        G36 = {value={0,'A'},priority=priority.none};
+        E97 = {value={0,'A'},priority=priority.none};
+        E98 = {value={0,'A'},priority=priority.none};
+        E99 = {value={0,'A'},priority=priority.none};
+        G37 = {value={0,'A'},priority=priority.none};
+        E100 = {value={0,'A'},priority=priority.none};
+        G38 = {value={0,'A'},priority=priority.none};
+    end
+
+    components(ExternalAccess=observe)
+        VEN = ee.sources.voltage_source(dc_voltage={2,'V'});
+        REN = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        Q20 = ee.additional.spice_semiconductors.spice_npn(AREA={1,'m^2'},BF={100,'1'},BR={1,'1'},CJC={0,'F/m^2'}, ...
+            CJE={0,'F/m^2'},CJS={0,'F/m^2'},EG={1.11,'eV'},FC={0.5,'1'},IKF={Inf,'A/m^2'},IKR={Inf,'A/m^2'},IRB={Inf,'A/m^2'}, ...
+            IS={1e-16,'A/m^2'},ISC={0,'A/m^2'},ISE={0,'A/m^2'},ITF={0,'A/m^2'},MJC={0.33,'1'},MJE={0.33,'1'},MJS={0,'1'}, ...
+            NC={2,'1'},NE={1.5,'1'},NF={1,'1'},NR={1,'1'},RB={0,'Ohm*m^2'},RBM={0,'Ohm*m^2'},RC={0,'Ohm*m^2'},RE={0,'Ohm*m^2'}, ...
+            TF={0,'s'},TR={0,'s'},VAF={Inf,'V'},VAR={Inf,'V'},VJC={0.75,'V'},VJE={0.75,'V'},VJS={0.75,'V'},VTF={Inf,'V'}, ...
+            XCJC={1,'1'},XTB={0,'1'},XTF={0,'1'},XTI={3,'1'},C_param=2);
+        R3 = foundation.electrical.elements.resistor(R={2,'Ohm'});
+        R4 = foundation.electrical.elements.resistor(R={2,'Ohm'});
+        R10 = foundation.electrical.elements.resistor(R={1e3,'Ohm'});
+        R11 = foundation.electrical.elements.resistor(R={1e3,'Ohm'});
+        R12 = foundation.electrical.elements.resistor(R={4,'Ohm'});
+        R13 = foundation.electrical.elements.resistor(R={4,'Ohm'});
+        R16 = foundation.electrical.elements.resistor(R={200,'Ohm'});
+        R17 = foundation.electrical.elements.resistor(R={4,'Ohm'});
+        R18 = foundation.electrical.elements.resistor(R={4,'Ohm'});
+        D5 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'},IKF={Inf,'A/m^2'}, ...
+            ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'},CJO={0,'F/m^2'}, ...
+            FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'},NBV={1,'1'}, ...
+            NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        D6 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'},IKF={Inf,'A/m^2'}, ...
+            ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'},CJO={0,'F/m^2'}, ...
+            FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'},NBV={1,'1'}, ...
+            NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        D7 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'},IKF={Inf,'A/m^2'}, ...
+            ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'},CJO={0,'F/m^2'}, ...
+            FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'},NBV={1,'1'}, ...
+            NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        D8 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'},IKF={Inf,'A/m^2'}, ...
+            ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'},CJO={0,'F/m^2'}, ...
+            FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'},NBV={1,'1'}, ...
+            NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        I8 = ee.sources.current_source(dc_current={-(0.1e-3),'A'});
+        I9 = ee.sources.current_source(dc_current={-(0.1e-3),'A'});
+        D9 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-16,'A/m^2'},IKF={Inf,'A/m^2'}, ...
+            ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'},CJO={0,'F/m^2'}, ...
+            FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'},NBV={1,'1'}, ...
+            NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        D10 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-16,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        I10 = ee.sources.current_source(dc_current={-(0.1e-3),'A'});
+        I11 = ee.sources.current_source(dc_current={-(0.1e-3),'A'});
+        R22 = foundation.electrical.elements.resistor(R={100e6,'Ohm'});
+        R30 = foundation.electrical.elements.resistor(R={1e5,'Ohm'});
+        R31 = foundation.electrical.elements.resistor(R={1e5,'Ohm'});
+        R32 = foundation.electrical.elements.resistor(R={1e5,'Ohm'});
+        R33 = foundation.electrical.elements.resistor(R={10,'Ohm'});
+        R34 = foundation.electrical.elements.resistor(R={10,'Ohm'});
+        R35 = foundation.electrical.elements.resistor(R={10,'Ohm'});
+        R36 = foundation.electrical.elements.resistor(R={1e3,'Ohm'});
+        R37 = foundation.electrical.elements.resistor(R={1e3,'Ohm'});
+        C6 = foundation.electrical.elements.capacitor(c={0.2e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        C7 = foundation.electrical.elements.capacitor(c={0.2e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        C8 = foundation.electrical.elements.capacitor(c={0.2e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        D11 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        D12 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        M1 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(80*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M2 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(80*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M3 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(80*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M4 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(110*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M5 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(110*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M8 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(80*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        R43 = foundation.electrical.elements.resistor(R={100,'Ohm'});
+        R44 = foundation.electrical.elements.resistor(R={100,'Ohm'});
+        R45 = foundation.electrical.elements.resistor(R={120e6,'Ohm'});
+        C12 = foundation.electrical.elements.capacitor(c={10e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        R46 = foundation.electrical.elements.resistor(R={2e3,'Ohm'});
+        R47 = foundation.electrical.elements.resistor(R={2e3,'Ohm'});
+        C13 = foundation.electrical.elements.capacitor(c={1e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        C14 = foundation.electrical.elements.capacitor(c={4e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        C15 = foundation.electrical.elements.capacitor(c={4e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        C16 = foundation.electrical.elements.capacitor(c={0.5e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        D13 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        D14 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        Q15 = ee.additional.spice_semiconductors.spice_pnp(AREA={1,'m^2'},BF={100,'1'},BR={1,'1'},CJC={0,'F/m^2'}, ...
+            CJE={0,'F/m^2'},CJS={0,'F/m^2'},EG={1.11,'eV'},FC={0.5,'1'},IKF={Inf,'A/m^2'},IKR={Inf,'A/m^2'},IRB={Inf,'A/m^2'}, ...
+            IS={1e-16,'A/m^2'},ISC={0,'A/m^2'},ISE={0,'A/m^2'},ITF={0,'A/m^2'},MJC={0.33,'1'},MJE={0.33,'1'},MJS={0,'1'}, ...
+            NC={2,'1'},NE={1.5,'1'},NF={1,'1'},NR={1,'1'},RB={0,'Ohm*m^2'},RBM={0,'Ohm*m^2'},RC={0,'Ohm*m^2'},RE={0,'Ohm*m^2'}, ...
+            TF={0,'s'},TR={0,'s'},VAF={Inf,'V'},VAR={Inf,'V'},VJC={0.75,'V'},VJE={0.75,'V'},VJS={0.75,'V'},VTF={Inf,'V'}, ...
+            XCJC={1,'1'},XTB={0,'1'},XTF={0,'1'},XTI={3,'1'},C_param=2);
+        V18 = ee.sources.voltage_source(dc_voltage={0,'V'});
+        M19 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(6*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(500*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M23 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(6*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(500*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        V21 = ee.sources.voltage_source(dc_voltage={0,'V'});
+        R59 = foundation.electrical.elements.resistor(R={1,'Ohm'});
+        R60 = foundation.electrical.elements.resistor(R={1,'Ohm'});
+        J1 = ee.additional.spice_semiconductors.spice_njfet(AREA={1,'m^2'},BETA={0.0001,'A/(V^2*m^2)'},CGD={0,'F/m^2'}, ...
+            CGS={0,'F/m^2'},FC={0.5,'1'},IS={1e-14,'A/m^2'},LAMBDA={0,'1/V'},M={0.5,'1'},N={1,'1'},RD={1e-12,'Ohm*m^2'}, ...
+            RS={1e-12,'Ohm*m^2'},VTO={-2,'V'},XTI={3,'1'},C_param=2);
+        J2 = ee.additional.spice_semiconductors.spice_njfet(AREA={1,'m^2'},BETA={0.0001,'A/(V^2*m^2)'},CGD={0,'F/m^2'}, ...
+            CGS={0,'F/m^2'},FC={0.5,'1'},IS={1e-14,'A/m^2'},LAMBDA={0,'1/V'},M={0.5,'1'},N={1,'1'},RD={1e-12,'Ohm*m^2'}, ...
+            RS={1e-12,'Ohm*m^2'},VTO={-2,'V'},XTI={3,'1'},C_param=2);
+        J3 = ee.additional.spice_semiconductors.spice_njfet(AREA={1,'m^2'},BETA={0.0001,'A/(V^2*m^2)'},CGD={0,'F/m^2'}, ...
+            CGS={0,'F/m^2'},FC={0.5,'1'},IS={1e-14,'A/m^2'},LAMBDA={0,'1/V'},M={0.5,'1'},N={1,'1'},RD={1e-12,'Ohm*m^2'}, ...
+            RS={1e-12,'Ohm*m^2'},VTO={-2,'V'},XTI={3,'1'},C_param=2);
+        J4 = ee.additional.spice_semiconductors.spice_njfet(AREA={1,'m^2'},BETA={0.0001,'A/(V^2*m^2)'},CGD={0,'F/m^2'}, ...
+            CGS={0,'F/m^2'},FC={0.5,'1'},IS={1e-14,'A/m^2'},LAMBDA={0,'1/V'},M={0.5,'1'},N={1,'1'},RD={1e-12,'Ohm*m^2'}, ...
+            RS={1e-12,'Ohm*m^2'},VTO={-2,'V'},XTI={3,'1'},C_param=2);
+        C21 = foundation.electrical.elements.capacitor(c={2e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        R62 = foundation.electrical.elements.resistor(R={1e4,'Ohm'});
+        C23 = foundation.electrical.elements.capacitor(c={0.1e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        D17 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        D18 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        R66 = foundation.electrical.elements.resistor(R={100e6,'Ohm'});
+        R67 = foundation.electrical.elements.resistor(R={100e6,'Ohm'});
+        R68 = foundation.electrical.elements.resistor(R={1e3,'Ohm'});
+        R69 = foundation.electrical.elements.resistor(R={1e3,'Ohm'});
+        R70 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        R71 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        R72 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        R73 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        R75 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R76 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R77 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R78 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R79 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R81 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R82 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R83 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        V49 = ee.sources.voltage_source(dc_voltage={15,'V'});
+        V50 = ee.sources.voltage_source(dc_voltage={-15,'V'});
+        R127 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        R128 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        M41 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(1.5*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-7.5,'V'}, ...
+            XJ={0,'m'},WIDTH={(150*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M42 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(1.5*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={7.5,'V'}, ...
+            XJ={0,'m'},WIDTH={0.0001,'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        R129 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        R130 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        M43 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.5,'V'}, ...
+            XJ={0,'m'},WIDTH={(300*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M44 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.5,'V'}, ...
+            XJ={0,'m'},WIDTH={(3000*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        R131 = foundation.electrical.elements.resistor(R={1e4,'Ohm'});
+        R132 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        V51 = ee.sources.voltage_source(dc_voltage={1,'V'});
+        M45 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(6*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(60*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M46 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(6*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(60*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        I20 = ee.sources.current_source(dc_current={-(0.1e-6),'A'});
+        C26 = foundation.electrical.elements.capacitor(c={1e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        V52 = ee.sources.voltage_source(dc_voltage={1.111e-6,'V'});
+        R133 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        C32 = foundation.electrical.elements.capacitor(c={3e-15,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        C33 = foundation.electrical.elements.capacitor(c={3e-15,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        I21 = ee.sources.current_source(dc_current={-(30e-6),'A'});
+        L1 = foundation.electrical.elements.inductor(l={4e-9,'H'},r={0,'Ohm'},g=inductorParallelConductance,i_L.priority=priority.none);
+        R150 = foundation.electrical.elements.resistor(R={400,'Ohm'});
+        V78 = ee.sources.voltage_source(dc_voltage={0,'V'});
+        V79 = ee.sources.voltage_source(dc_voltage={0,'V'});
+        R155 = foundation.electrical.elements.resistor(R={1e8,'Ohm'});
+        R156 = foundation.electrical.elements.resistor(R={1e8,'Ohm'});
+        R157 = foundation.electrical.elements.resistor(R={1e8,'Ohm'});
+        R158 = foundation.electrical.elements.resistor(R={1e8,'Ohm'});
+        RG1 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        R159 = foundation.electrical.elements.resistor(R={100,'Ohm'});
+        R225 = foundation.electrical.elements.resistor(R={25e3,'Ohm'});
+        R226 = foundation.electrical.elements.resistor(R={25e3,'Ohm'});
+        M48 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(1000*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        R297 = foundation.electrical.elements.resistor(R={61.5e3,'Ohm'});
+        M49 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.5,'V'}, ...
+            XJ={0,'m'},WIDTH={(300*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M50 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-18,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.5,'V'}, ...
+            XJ={0,'m'},WIDTH={(300*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        R298 = foundation.electrical.elements.resistor(R={1e4,'Ohm'});
+        R299 = foundation.electrical.elements.resistor(R={1e4,'Ohm'});
+        C35 = foundation.electrical.elements.capacitor(c={40e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        M51 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(110*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M52 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(110*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        R300 = foundation.electrical.elements.resistor(R={2,'Ohm'});
+        R301 = foundation.electrical.elements.resistor(R={2,'Ohm'});
+        R302 = foundation.electrical.elements.resistor(R={2e3,'Ohm'});
+        R303 = foundation.electrical.elements.resistor(R={2e3,'Ohm'});
+        C36 = foundation.electrical.elements.capacitor(c={1e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        R304 = foundation.electrical.elements.resistor(R={1e9,'Ohm'});
+        C37 = foundation.electrical.elements.capacitor(c={0.1e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        R305 = foundation.electrical.elements.resistor(R={1e4,'Ohm'});
+        V115 = ee.sources.voltage_source(dc_voltage={1e-3,'V'});
+        R306 = foundation.electrical.elements.resistor(R={25e3,'Ohm'});
+        R307 = foundation.electrical.elements.resistor(R={25e3,'Ohm'});
+        M53 = ee.additional.spice_semiconductors.spice_pmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(6*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={-0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(500*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        R308 = foundation.electrical.elements.resistor(R={2e3,'Ohm'});
+        V116 = ee.sources.voltage_source(dc_voltage={1.25,'V'});
+        M54 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(500*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        M55 = ee.additional.spice_semiconductors.spice_nmos(AREA = {1,'1'},AD={0,'m^2'},AS={0,'m^2'},CBD={0,'F'}, ...
+            CBS={0,'F'},CGBO={0,'F/m'},CGDO={0,'F/m'},CGSO={0,'F/m'},CJ={0,'F/m^2'},CJSW={0,'F/m'},DELTA={0,'1'}, ...
+            ETA={0,'1'},FC={0.5,'1'},GAMMA={nan,'V^0.5'},IS={1e-14,'A'},JS={0,'A/m^2'},KAPPA={0.2,'1'},KP={0.0002,'A/V^2'}, ...
+            LAMBDA={0,'1/V'},LD={0,'m'},LENGTH={(3*1e-06),'m'},LEVEL={1,'1'},SCALE={1,'1'},MJ={0.5,'1'},MJSW={0.33,'1'}, ...
+            N={1,'1'},NEFF={1,'1'},NFS={0,'1/cm^2'},NSS={nan,'1/cm^2'},NSUB={nan,'1/cm^3'},NRD={0,'1'},NRS={0,'1'}, ...
+            PB={0.8,'V'},PD={0,'m'},PHI={nan,'V'},PS={0,'m'},RD={nan,'Ohm'},RS={nan,'Ohm'},RSH={nan,'Ohm'},THETA={0,'1/V'}, ...
+            TOX={nan,'m'},TPG={1,'1'},UCRIT={10000,'V/cm'},UEXP={0,'1'},U0={600,'cm^2/(V*s)'},VMAX={0,'m/s'},VTO={0.7,'V'}, ...
+            XJ={0,'m'},WIDTH={(500*1e-06),'m'},Ci_param={1,'1'},Cov_param=2,C_param=2);
+        C105 = foundation.electrical.elements.capacitor(c={130e-12,'F'},r=capacitorSeriesResistance,g={0,'1/Ohm'}, ...
+            vc.priority=priority.none);
+        R233 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        R334 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        R335 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        R336 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        R337 = foundation.electrical.elements.resistor(R={1e12,'Ohm'});
+        I48 = ee.sources.current_source(dc_current={-(1e-12),'A'});
+        I49 = ee.sources.current_source(dc_current={-(1e-3),'A'});
+        D46 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        V119 = ee.sources.voltage_source(dc_voltage={0.7,'V'});
+        R633 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        R634 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        D47 = ee.additional.spice_semiconductors.spice_diode(AREA={1,'m^2'},SCALE={1,'1'},IS={1e-14,'A/m^2'}, ...
+            IKF={Inf,'A/m^2'},ISR={0,'A/m^2'},N={1,'1'},NR={2,'1'},M={0.5,'1'},VJ={1,'V'},RS={1e-12,'Ohm*m^2'},C_param={2,'1'}, ...
+            CJO={0,'F/m^2'},FC={0.5,'1'},TT={0,'s'},RevBrk={2,'1'},BV={Inf,'V'},IBV={1e-10,'A/m^2'},IBVL={1e-10,'A/m^2'}, ...
+            NBV={1,'1'},NBVL={1,'1'},XTI={3,'1'},EG={1.11,'eV'},TIKF={0,'K^-1'},TRS1={0,'K^-1'},TRS2={0,'K^-2'},TBV1={0,'K^-1'}, ...
+            TBV2={0,'K^-2'});
+        V120 = ee.sources.voltage_source(dc_voltage={83.5,'V'});
+        I50 = ee.sources.current_source(dc_current={-(1e-12),'A'});
+        R635 = foundation.electrical.elements.resistor(R={1e6,'Ohm'});
+        R636 = foundation.electrical.elements.resistor(R={1e11,'Ohm'});
+    end
+
+    connections
+        connect(VEN.p,node_5);
+        connect(VEN.n,node_2);
+        connect(REN.p,node_5);
+        connect(REN.n,node_2);
+        connect(Q20.cx,node_7);
+        connect(Q20.bx,node_8);
+        connect(Q20.ex,node_9);
+        connect(Q20.sx,*);
+        connect(R3.p,node_10);
+        connect(R3.n,node_11);
+        connect(R4.p,node_12);
+        connect(R4.n,node_11);
+        connect(R10.p,node_8);
+        connect(R10.n,node_13);
+        connect(R11.p,node_14);
+        connect(R11.n,node_15);
+        connect(R12.p,node_16);
+        connect(R12.n,node_6);
+        connect(R13.p,node_2);
+        connect(R13.n,node_17);
+        connect(R16.p,node_18);
+        connect(R16.n,node_19);
+        connect(R17.p,node_20);
+        connect(R17.n,node_21);
+        connect(R18.p,node_9);
+        connect(R18.n,node_22);
+        connect(D5.p,node_23);
+        connect(D5.n,node_6);
+        connect(D6.p,node_2);
+        connect(D6.n,node_23);
+        connect(D7.p,node_24);
+        connect(D7.n,*);
+        connect(D8.p,node_25);
+        connect(D8.n,*);
+        connect(I8.p,*);
+        connect(I8.n,node_24);
+        connect(I9.p,*);
+        connect(I9.n,node_25);
+        connect(D9.p,node_26);
+        connect(D9.n,*);
+        connect(D10.p,node_27);
+        connect(D10.n,*);
+        connect(I10.p,*);
+        connect(I10.n,node_26);
+        connect(I11.p,*);
+        connect(I11.n,node_27);
+        connect(R22.p,node_2);
+        connect(R22.n,node_6);
+        connect(R30.p,node_30);
+        connect(R30.n,node_34);
+        connect(R31.p,node_31);
+        connect(R31.n,node_35);
+        connect(R32.p,node_32);
+        connect(R32.n,node_36);
+        connect(R33.p,*);
+        connect(R33.n,node_34);
+        connect(R34.p,*);
+        connect(R34.n,node_35);
+        connect(R35.p,*);
+        connect(R35.n,node_36);
+        connect(R36.p,node_38);
+        connect(R36.n,node_33);
+        connect(R37.p,node_33);
+        connect(R37.n,node_39);
+        connect(C6.p,node_30);
+        connect(C6.n,node_34);
+        connect(C7.p,node_31);
+        connect(C7.n,node_35);
+        connect(C8.p,node_32);
+        connect(C8.n,node_36);
+        connect(D11.p,node_18);
+        connect(D11.n,node_21);
+        connect(D12.p,node_9);
+        connect(D12.n,node_18);
+        connect(M1.dx,node_42);
+        connect(M1.gx,node_43);
+        connect(M1.sx,node_17);
+        connect(M1.bx,node_17);
+        connect(M2.dx,node_44);
+        connect(M2.gx,node_45);
+        connect(M2.sx,node_16);
+        connect(M2.bx,node_16);
+        connect(M3.dx,node_46);
+        connect(M3.gx,node_46);
+        connect(M3.sx,node_20);
+        connect(M3.bx,node_20);
+        connect(M4.dx,node_47);
+        connect(M4.gx,node_48);
+        connect(M4.sx,node_10);
+        connect(M4.bx,node_10);
+        connect(M5.dx,node_49);
+        connect(M5.gx,node_50);
+        connect(M5.sx,node_12);
+        connect(M5.bx,node_12);
+        connect(M8.dx,node_51);
+        connect(M8.gx,node_51);
+        connect(M8.sx,node_22);
+        connect(M8.bx,node_22);
+        connect(R43.p,node_52);
+        connect(R43.n,node_45);
+        connect(R44.p,node_53);
+        connect(R44.n,node_43);
+        connect(R45.p,node_41);
+        connect(R45.n,node_18);
+        connect(C12.p,node_19);
+        connect(C12.n,node_23);
+        connect(R46.p,node_9);
+        connect(R46.n,node_47);
+        connect(R47.p,node_9);
+        connect(R47.n,node_49);
+        connect(C13.p,node_47);
+        connect(C13.n,node_49);
+        connect(C14.p,node_29);
+        connect(C14.n,*);
+        connect(C15.p,node_28);
+        connect(C15.n,*);
+        connect(C16.p,node_23);
+        connect(C16.n,*);
+        connect(D13.p,node_43);
+        connect(D13.n,node_7);
+        connect(D14.p,node_55);
+        connect(D14.n,node_45);
+        connect(Q15.cx,node_55);
+        connect(Q15.bx,node_15);
+        connect(Q15.ex,node_21);
+        connect(Q15.sx,*);
+        connect(V18.p,node_29);
+        connect(V18.n,node_56);
+        connect(M19.dx,node_57);
+        connect(M19.gx,node_58);
+        connect(M19.sx,node_21);
+        connect(M19.bx,node_21);
+        connect(M23.dx,node_58);
+        connect(M23.gx,node_58);
+        connect(M23.sx,node_21);
+        connect(M23.bx,node_21);
+        connect(V21.p,node_57);
+        connect(V21.n,node_11);
+        connect(R59.p,node_23);
+        connect(R59.n,node_44);
+        connect(R60.p,node_42);
+        connect(R60.n,node_23);
+        connect(J1.dx,node_59);
+        connect(J1.gx,node_29);
+        connect(J1.sx,node_59);
+        connect(J2.dx,node_59);
+        connect(J2.gx,node_28);
+        connect(J2.sx,node_59);
+        connect(J3.dx,node_28);
+        connect(J3.gx,node_60);
+        connect(J3.sx,node_28);
+        connect(J4.dx,node_29);
+        connect(J4.gx,node_60);
+        connect(J4.sx,node_29);
+        connect(C21.p,node_29);
+        connect(C21.n,node_61);
+        connect(R62.p,node_62);
+        connect(R62.n,node_54);
+        connect(C23.p,node_54);
+        connect(C23.n,node_41);
+        connect(D17.p,node_66);
+        connect(D17.n,node_63);
+        connect(D18.p,node_64);
+        connect(D18.n,node_65);
+        connect(R66.p,node_63);
+        connect(R66.n,node_66);
+        connect(R67.p,node_65);
+        connect(R67.n,node_64);
+        connect(R68.p,node_66);
+        connect(R68.n,node_21);
+        connect(R69.p,node_9);
+        connect(R69.n,node_65);
+        connect(R70.p,node_64);
+        connect(R70.n,node_41);
+        connect(R71.p,node_65);
+        connect(R71.n,node_41);
+        connect(R72.p,node_41);
+        connect(R72.n,node_66);
+        connect(R73.p,node_41);
+        connect(R73.n,node_63);
+        connect(R75.p,node_40);
+        connect(R75.n,node_29);
+        connect(R76.p,node_37);
+        connect(R76.n,node_40);
+        connect(R77.p,node_3);
+        connect(R77.n,node_37);
+        connect(R78.p,node_4);
+        connect(R78.n,node_28);
+        connect(R79.p,node_41);
+        connect(R79.n,node_54);
+        connect(R81.p,node_52);
+        connect(R81.n,node_21);
+        connect(R82.p,node_9);
+        connect(R82.n,node_53);
+        connect(R83.p,node_33);
+        connect(R83.n,*);
+        connect(V49.p,node_70);
+        connect(V49.n,node_69);
+        connect(V50.p,node_71);
+        connect(V50.n,node_68);
+        connect(R127.p,node_68);
+        connect(R127.n,*);
+        connect(R128.p,node_69);
+        connect(R128.n,*);
+        connect(M41.dx,node_41);
+        connect(M41.gx,node_71);
+        connect(M41.sx,node_18);
+        connect(M41.bx,node_72);
+        connect(M42.dx,node_18);
+        connect(M42.gx,node_70);
+        connect(M42.sx,node_41);
+        connect(M42.bx,node_73);
+        connect(R129.p,node_72);
+        connect(R129.n,*);
+        connect(R130.p,node_73);
+        connect(R130.n,*);
+        connect(M43.dx,node_74);
+        connect(M43.gx,node_5);
+        connect(M43.sx,node_9);
+        connect(M43.bx,node_9);
+        connect(M44.dx,node_75);
+        connect(M44.gx,node_76);
+        connect(M44.sx,node_9);
+        connect(M44.bx,node_9);
+        connect(R131.p,node_74);
+        connect(R131.n,node_21);
+        connect(R132.p,node_75);
+        connect(R132.n,node_77);
+        connect(V51.p,node_77);
+        connect(V51.n,node_9);
+        connect(M45.dx,node_78);
+        connect(M45.gx,node_78);
+        connect(M45.sx,node_21);
+        connect(M45.bx,node_21);
+        connect(M46.dx,node_5);
+        connect(M46.gx,node_78);
+        connect(M46.sx,node_21);
+        connect(M46.bx,node_21);
+        connect(I20.p,node_78);
+        connect(I20.n,node_9);
+        connect(C26.p,node_5);
+        connect(C26.n,*);
+        connect(V52.p,node_75);
+        connect(V52.n,node_79);
+        connect(R133.p,node_9);
+        connect(R133.n,node_79);
+        connect(C32.p,node_21);
+        connect(C32.n,node_74);
+        connect(C33.p,node_77);
+        connect(C33.n,node_75);
+        connect(I21.p,node_6);
+        connect(I21.n,node_2);
+        connect(L1.p,node_23);
+        connect(L1.n,node_1);
+        connect(R150.p,node_23);
+        connect(R150.n,node_1);
+        connect(V78.p,node_21);
+        connect(V78.n,node_59);
+        connect(V79.p,node_60);
+        connect(V79.n,node_9);
+        connect(R155.p,node_46);
+        connect(R155.n,node_21);
+        connect(R156.p,node_9);
+        connect(R156.n,node_51);
+        connect(R157.p,node_17);
+        connect(R157.n,node_43);
+        connect(R158.p,node_16);
+        connect(R158.n,node_45);
+        connect(RG1.p,*);
+        connect(RG1.n,node_67);
+        connect(R159.p,node_61);
+        connect(R159.n,node_28);
+        connect(R225.p,node_50);
+        connect(R225.n,node_28);
+        connect(R226.p,node_48);
+        connect(R226.n,node_56);
+        connect(M48.dx,node_80);
+        connect(M48.gx,node_81);
+        connect(M48.sx,node_2);
+        connect(M48.bx,node_2);
+        connect(R297.p,node_80);
+        connect(R297.n,node_6);
+        connect(M49.dx,node_82);
+        connect(M49.gx,node_74);
+        connect(M49.sx,node_9);
+        connect(M49.bx,node_9);
+        connect(M50.dx,node_76);
+        connect(M50.gx,node_82);
+        connect(M50.sx,node_9);
+        connect(M50.bx,node_9);
+        connect(R298.p,node_82);
+        connect(R298.n,node_77);
+        connect(R299.p,node_76);
+        connect(R299.n,node_77);
+        connect(C35.p,node_77);
+        connect(C35.n,node_82);
+        connect(M51.dx,node_83);
+        connect(M51.gx,node_84);
+        connect(M51.sx,node_85);
+        connect(M51.bx,node_85);
+        connect(M52.dx,node_86);
+        connect(M52.gx,node_87);
+        connect(M52.sx,node_88);
+        connect(M52.bx,node_88);
+        connect(R300.p,node_89);
+        connect(R300.n,node_85);
+        connect(R301.p,node_89);
+        connect(R301.n,node_88);
+        connect(R302.p,node_83);
+        connect(R302.n,node_21);
+        connect(R303.p,node_86);
+        connect(R303.n,node_21);
+        connect(C36.p,node_83);
+        connect(C36.n,node_86);
+        connect(R304.p,node_41);
+        connect(R304.n,node_90);
+        connect(C37.p,node_90);
+        connect(C37.n,node_41);
+        connect(R305.p,node_91);
+        connect(R305.n,node_90);
+        connect(V115.p,node_92);
+        connect(V115.n,node_56);
+        connect(R306.p,node_28);
+        connect(R306.n,node_87);
+        connect(R307.p,node_92);
+        connect(R307.n,node_84);
+        connect(M53.dx,node_93);
+        connect(M53.gx,node_94);
+        connect(M53.sx,node_95);
+        connect(M53.bx,node_95);
+        connect(R308.p,node_95);
+        connect(R308.n,node_57);
+        connect(V116.p,node_21);
+        connect(V116.n,node_94);
+        connect(M54.dx,node_93);
+        connect(M54.gx,node_93);
+        connect(M54.sx,node_9);
+        connect(M54.bx,node_9);
+        connect(M55.dx,node_89);
+        connect(M55.gx,node_93);
+        connect(M55.sx,node_9);
+        connect(M55.bx,node_9);
+        connect(C105.p,node_77);
+        connect(C105.n,node_76);
+        connect(R233.p,node_78);
+        connect(R233.n,node_21);
+        connect(R334.p,node_93);
+        connect(R334.n,node_9);
+        connect(R335.p,node_58);
+        connect(R335.n,node_21);
+        connect(R336.p,node_94);
+        connect(R336.n,node_21);
+        connect(R337.p,node_2);
+        connect(R337.n,node_81);
+        connect(I48.p,node_28);
+        connect(I48.n,*);
+        connect(I49.p,*);
+        connect(I49.n,node_97);
+        connect(D46.p,node_97);
+        connect(D46.n,*);
+        connect(V119.p,node_97);
+        connect(V119.n,node_98);
+        connect(R633.p,*);
+        connect(R633.n,node_98);
+        connect(R634.p,*);
+        connect(R634.n,node_99);
+        connect(D47.p,node_100);
+        connect(D47.n,node_96);
+        connect(V120.p,node_99);
+        connect(V120.n,node_100);
+        connect(I50.p,node_29);
+        connect(I50.n,*);
+        connect(R635.p,*);
+        connect(R635.n,node_96);
+        connect(R636.p,node_96);
+        connect(R636.n,node_100);
+    end
+
+    branches
+        E2: node_9.i -> *;
+        E3: node_21.i -> *;
+        E4: node_28.i -> node_4.i;
+        G2: node_29.i -> node_4.i;
+        E5: node_30.i -> *;
+        E6: node_31.i -> *;
+        E7: node_32.i -> *;
+        E10: node_37.i -> node_3.i;
+        E11: node_40.i -> node_37.i;
+        E12: node_29.i -> node_40.i;
+        E14: node_41.i -> node_9.i;
+        G3: node_18.i -> node_41.i;
+        E17: node_39.i -> *;
+        E18: node_38.i -> *;
+        E20: node_62.i -> node_41.i;
+        G7: node_63.i -> node_41.i;
+        G8: node_41.i -> node_64.i;
+        G9: node_41.i -> node_65.i;
+        G10: node_66.i -> node_41.i;
+        E23: node_21.i -> node_52.i;
+        E24: node_53.i -> node_9.i;
+        G11: node_6.i -> node_2.i;
+        G14: node_58.i -> node_9.i;
+        G15: node_46.i -> node_51.i;
+        E48: node_68.i -> node_18.i;
+        E49: node_69.i -> node_41.i;
+        E50: node_67.i -> *;
+        E94: node_81.i -> node_2.i;
+        G36: node_18.i -> node_41.i;
+        E97: node_91.i -> node_41.i;
+        E98: node_21.i -> node_14.i;
+        E99: node_13.i -> node_9.i;
+        G37: node_28.i -> *;
+        E100: node_99.i -> *;
+        G38: node_29.i -> *;
+    end
+
+    equations
+        value(node_9.v,'V') == (1)*value(node_2.v,'V');
+        value(node_21.v,'V') == (1)*value(node_6.v,'V');
+        value(node_28.v-node_4.v,'V') == (0.025)*value(node_26.v-node_27.v,'V');
+        value(G2,'A') == (2.9e-7)*value(node_24.v-node_25.v,'V');
+        value(node_30.v,'V') == (1)*value(node_21.v,'V');
+        value(node_31.v,'V') == (1)*value(node_9.v,'V');
+        value(node_32.v,'V') == (1)*value(node_33.v,'V');
+        value(node_37.v-node_3.v,'V') == (0.01)*value(node_36.v,'V');
+        value(node_40.v-node_37.v,'V') == (0.8)*value(node_35.v,'V');
+        value(node_29.v-node_40.v,'V') == (0.8)*value(node_34.v,'V');
+        value(node_41.v-node_9.v,'V') == (0.5)*value(node_21.v-node_9.v,'V');
+        value(G3,'A') == (0.2e-3)*value(node_54.v-node_41.v,'V');
+        value(node_39.v,'V') == (1)*value(node_29.v,'V');
+        value(node_38.v,'V') == (1)*value(node_4.v,'V');
+        value(node_62.v-node_41.v,'V') == (1)*value(node_49.v-node_47.v,'V');
+        value(G7,'A') == (-1e-3)*value(node_18.v-node_41.v,'V');
+        value(G8,'A') == (1e-3)*value(node_18.v-node_41.v,'V');
+        value(G9,'A') == (1e-3)*value(node_51.v-node_9.v,'V');
+        value(G10,'A') == (1e-3)*value(node_21.v-node_46.v,'V');
+        value(node_21.v-node_52.v,'V') == (1)*value(node_21.v-node_66.v,'V');
+        value(node_53.v-node_9.v,'V') == (1)*value(node_65.v-node_9.v,'V');
+        value(G11,'A') == (315e-6)*value(node_67.v,'V');
+        value(G14,'A') == ((55*1e-06))*value(node_67.v,'V');
+        value(G15,'A') == ((80*1e-06))*value(node_67.v,'V');
+        value(node_68.v-node_18.v,'V') == (30)*value(node_67.v,'V');
+        value(node_69.v-node_41.v,'V') == (-30)*value(node_67.v,'V');
+        value(node_67.v,'V') == (1)*value(node_79.v-node_9.v,'V');
+        value(node_81.v-node_2.v,'V') == (2)*value(node_67.v,'V');
+        value(G36,'A') == (0.2e-3)*value(node_90.v-node_41.v,'V');
+        value(node_91.v-node_41.v,'V') == (1)*value(node_86.v-node_83.v,'V');
+        value(node_21.v-node_14.v,'V') == (1)*value(node_6.v-node_16.v,'V');
+        value(node_13.v-node_9.v,'V') == (1)*value(node_17.v-node_2.v,'V');
+        value(G37,'A') == (6.6e-12)*value(node_96.v,'V');
+        value(node_99.v,'V') == (-571)*value(node_98.v,'V');
+        value(G38,'A') == (6.6e-12)*value(node_96.v,'V');
+    end
+
+end

@@ -1,0 +1,35 @@
+againlight\adc.o: ../Src/adc.c
+againlight\adc.o: ../Inc/adc.h
+againlight\adc.o: ../Inc/main.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h
+againlight\adc.o: ../Inc/stm32f0xx_hal_conf.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h
+againlight\adc.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
+againlight\adc.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f030x6.h
+againlight\adc.o: ../Drivers/CMSIS/Include/core_cm0.h
+againlight\adc.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+againlight\adc.o: ../Drivers/CMSIS/Include/cmsis_version.h
+againlight\adc.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+againlight\adc.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+againlight\adc.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+againlight\adc.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc_ex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h
+againlight\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
