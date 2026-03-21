@@ -1,0 +1,661 @@
+                                                                                                                    MP20051
+                                                                                         Low Noise, High PSRR, 1A
+                                                                                                 Linear Regulator
+The Future of Analog IC Technology
+
+DESCRIPTION                                                          FEATURES
+The MP20051 is a low-dropout linear regulator                            Up to 1A Output Current
+that supplies up to 1A current with a 140mV                              Low 140mV Dropout at 1A
+dropout voltage. The externally-adjustable output                        Low 110μA Ground Current
+voltage has a range of 0.8V to 5V from an input                          Output Voltage Available from 0.8V to 5V
+voltage of 2.5V to 5.5V.                                                 Low Noise: 13μVRMS typical (10Hz to 100kHz)
+                                                                         63dB PSRR @1kHz
+An internal PMOS pass element allows for a low
+                                                                         Stable with Ceramic Capacitor
+110μA ground current, making the MP20051
+                                                                         Excellent Load/Line Transient Response
+suitable for battery-powered devices. Other
+features include low-power shutdown, and short-                          Current Limiting and Thermal Protection
+circuit and thermal protection. The MP20051 is                           Available in 3mm x 3mm 8-pin QFN and
+available in 3mm x 3mm 8-pin QFN and SOIC8E                               SOIC8E Packages
+packages.                                                            APPLICATIONS
+                                                                         Notebook Computers
+                                                                         Cordless Telephones
+                                                                         Cellular Phones
+                                                                         Wireless Communication Equipment
+                                                                         Hand-Held Instruments
+                                                                     All MPS parts are lead-free and adhere to the RoHS directive. For MPS green
+                                                                     status, please visit MPS website under Quality Assurance. “MPS” and “The
+                                                                     Future of Analog IC Technology” are Registered Trademarks of Monolithic
+                                                                     Power Systems, Inc.
+
+
+
+
+TYPICAL APPLICATION
+
+
+
+
+                                                                    R1
+                                               VOUT  0.8  (1        )Volts
+                                                                    R2
+
+
+
+
+MP20051 Rev.1.2                                       www.MonolithicPower.com                                                                      1
+3/17/2017         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2017 MPS. All Rights Reserved.
+                                               MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+                                          ORDERING INFORMATION
+                         Part Number                       Package                          Top Marking
+                         MP20051DQ*                    QFN-8 (3mm x 3mm)                     See Below
+                         MP20051DN**                        SOIC8E                           See Below
+
+                            * For Tape & Reel, add suffix –Z (e.g. MP20051DQ–Z);
+                     For RoHS Compliant Packaging, add suffix –LF (e.g. MP20051DQ–LF–Z)
+                            ** For Tape & Reel, add suffix –Z (e.g. MP20051DN–Z);
+                     For RoHS Compliant Packaging, add suffix –LF (e.g. MP20051DN–LF–Z)
+
+                                        TOP MARKING (MP20051DQ)
+
+
+
+
+                   ABR: product code of MP20051DQ;
+                   Y: year code;
+                   LLL: lot number;
+
+
+
+                                        TOP MARKING (MP20051DN)
+
+
+
+
+                   MP20051: product code of MP20051DN;
+                   MPS: MPS prefix:
+                   Y: year code;
+                   WW: week code:
+                   LLLLLLLL: lot number;
+
+
+
+
+MP20051 Rev.1.2                                       www.MonolithicPower.com                                         2
+3/17/2017         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2017 MPS. All Rights Reserved.
+                                                         MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+                                                     PACKAGE REFERENCE
+
+                                                 TOP VIEW                                    TOP VIEW
+
+                                       OUT 1                     8 IN            OUT     1                  8    IN
+
+                                       OUT 2                     7 IN            OUT     2                  7    IN
+                                         FB 3                    6 NC              FB    3                  6    NC
+                                       GND 4                     5 EN            GND     4                  5    EN
+
+                                EXPOSED PAD                                    EXPOSED PAD
+                                ON BACKSIDE                                    ON BACKSIDE
+                             CONNECT TO GND                                 CONNECT TO GND
+
+                                  QFN-8 (3mm x 3mm)                                       SOIC8E
+                                                                                                           (5)
+ABSOLUTE MAXIMUM RATINGS (1)                                                Thermal Resistance                        θJA    θJC
+VIN, EN, FB to GND .......................-0.3V to +6V                      QFN-8 (3mmx3mm) ................ 50 ...... 12 ... °C/W
+OUT to GND ...................... -0.5V to (VIN + 0.5V)                     SOIC8E ................................... 50 ...... 10 ... °C/W
+                                                                      (2)
+Continuous Power Dissipation ...... (TA=25°C)                               Notes:
+QFN8 (3x3mm)................................................2.0W            1) Exceeding these ratings may damage the device.
+                                                                            2) The maximum allowable power dissipation is a function of the
+SOIC8E ............................................................2.0W        maximum junction temperature TJ (MAX), the junction-to-
+Junction Temperature ...............................150C                      ambient thermal resistance θJA, and the ambient temperature
+Storage Temperature Range ..... -65°C to 150°C                                 TA. The maximum allowable continuous power dissipation at
+                                                                               any ambient temperature is calculated by PD (MAX) = (TJ
+Lead Temperature (Soldering, 10sec)...........260°C                            (MAX)-TA)/θJA. Exceeding the maximum allowable power
+                                                                               dissipation will cause excessive die temperature, and the
+ESD SUSCEPTIBILITY(3)                                                          regulator will go into thermal shutdown. Internal thermal
+                                                                               shutdown circuitry protects the device from permanent
+HBM (Human Body Mode) .......................... 2kV                           damage.
+MM (Machine Mode) ................................. 200V                    3) Devices     are    ESD   sensitive.   Handling    precaution
+                                                                               recommended.
+                                                                   (4)
+Recommended Operating Conditions                                            4) The device is not guaranteed to function outside of its
+                                                                               operating conditions.
+Supply Input Voltage ....................... 2.5V to 5.5V                   5) Measured on JESD51-7, 4-layer PCB.
+Enable Input Voltage ......................... 0V to 5.5V
+Operating Junction Temp. (TJ). -40°C to +125°C
+
+
+
+
+MP20051 Rev.1.2                                            www.MonolithicPower.com                                                             3
+3/17/2017              MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                      © 2017 MPS. All Rights Reserved.
+                                                                       MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+ELECTRICAL CHARACTERISTICS
+VIN=VOUT+0.5V or VIN=2.5V, EN=VIN, Typical values are at TA=25°C, unless otherwise specified
+ Parameter                                                   Condition                               Min       Typ        Max    Units
+ Input Voltage                                                                                        2.5                  5.5    V
+ Input Under Voltage Lockout                                 VIN rising                              1.95                 2.25    V
+ Hysteresis of UVLO                                                                                            160                mV
+ FB Voltage                                                  VOUT=0.8V, IOUT=1mA                     0.784     0.8      0.816     V
+                                                             IOUT=1mA, TA=25°C                         -2                 2
+ Output Voltage Accuracy                                                                                                          %
+                                                             IOUT=1mA, -40≤TA≤85°C                     -3                 3
+ Maximum Output Current                                      Continuous, VIN≥2.5V, VOUT=2.5V           1                          A
+ Short-Circuit Current Limit                                 VOUT=0, VIN≥2.5V                                  1.6                A
+                                                             VOUT=2.5V, VOUT within 4% of normal
+ In-Regulation Current Limit                                                                          1.4      2.2        3.0     A
+                                                             output voltage VIN=5.5V
+                                                             IOUT=0.1mA, VOUT=2.5V                             110
+ Ground Current                                                                                                                   μA
+                                                             IOUT=1A, VOUT=2.5V                                           600
+                                                             IOUT=1A, VOUT=2.5V                                140        280
+ Dropout Voltage(6)                                          IOUT=750m, VOUT=2.5V                              105        210     mV
+                                                             IOUT=500mA, VOUT=2.5V                             70         140
+                                                             VOUT=2.5V, VIN from VOUT+0.5V to
+ Line Regulation(7)                                                                                  -0.15                0.15   %/V
+                                                             5.5V, IOUT=100mA,
+ Load Regulation(8)                                          IOUT from 100mA to 1A, VOUT=2.5V                 0.3                 %
+                                                                                         VOUT=1.1V             13
+                                                             IOUT=100mA, f ranges
+ Output Voltage Noise                                                                    VOUT=3.3V             35                μVRMS
+                                                             from 10Hz to 100kHz
+                                                                                         VOUT=5V               55
+                                                                                         f=100Hz               65
+                                                             VIN = 2.5V, VOUT = 1.1V,    f=1kHz                63
+ PSRR                                                                                                                             dB
+                                                             IOUT = 1A                   f=10kHz               63
+                                                                                         f=1MHz                33
+ Shutdown Supply Current                                     VIN=+5.5V                                        0.2                 μA
+ EN Pin Current , Enabled                                    VIN=VEN=+5.5V                                    0.2                 μA
+ Feedback Pin Current                                        VIN=+5.5V, VFB=6V                                0.02                μA
+                                                             VOUT(NOM)=2.5V, COUT=4.7μF,
+ Startup Time                                                                                                  45                 μs
+                                                             VOUT=0% to 90%VOUT(NOM)
+                                                             EN Logic High                            1.5
+ EN PIN Threshold                                                                                                                 V
+                                                             EN Logic Low                                                 0.4
+ Thermal Shutdown Temperature                                Typical thermal hysteresis =20°C                  150                °C
+Notes:
+6) Dropout Voltage is defined as the input to output differential when the output voltage drops 100mV below its nominal value.
+
+                         VOUT  V           
+                                                 VOUT  V        
+7) Line Regulation=               IN(MAX )             IN(MIN) 
+                                                                          (% / V)
+                      V          VIN(MIN)   VOUT(NOM)
+                       INMAX             
+
+                       VOUT I            
+                                                 VOUT I          
+8) Load Regulation=           OUT (MAX )              OUT (MIN) 
+                                                                        (%)
+                                     VOUT NOM
+
+
+
+
+MP20051 Rev.1.2                                           www.MonolithicPower.com                                                        4
+3/17/2017             MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                     © 2017 MPS. All Rights Reserved.
+                                               MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+PIN FUNCTIONS
+ Pin #       Name         Pin Function
+
+                          Regulator output. Bypass with a standard 4.7μF ceramic capacitor to GND. Connect all
+  1, 2       VOUT
+                          the pins together externally.
+
+                          Feedback Input. Connect FB to the center point of the external resistor divider. The
+   3          FB
+                          feedback threshold voltage is 0.8V.
+
+            GND
+   4                 Ground. Connect exposed pad to GND plane for optimal thermal performance.
+         Exposed pad
+
+                          Regulator Enable Control Input. Drive EN above 1.5V to turn on the MP20051. Drive EN
+   5          EN
+                          below 0.4V to turn it off. Do not float the EN pin.
+
+   6          NC          No Connection. Leave this NC pin open.
+
+                          Regulator Input. Supply voltage ranges from 2.5V to 5.5V. Bypass with 2.2μF capacitor.
+  7, 8        VIN         These pins must be externally connected for proper operation even if they are internally
+                          connected.
+
+
+
+
+MP20051 Rev.1.2                                       www.MonolithicPower.com                                         5
+3/17/2017         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2017 MPS. All Rights Reserved.
+                                                                                      MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS
+VIN = 2.5V, VOUT = 1.1V, CIN=2.2µF, COUT=4.7µF, TA = 25°C, unless otherwise noted.
+                                Quiescent Current vs.                                             Quiescent Current vs.                                                Dropout Voltage vs.
+                                Temperature                                                       Input Voltage                                                        Temperature
+                                IOUT=0A                                                           IOUT=0A                                                           VOUT=2.5V, IOUT=1A
+                         140                                                               160                                                                   200
+                                                                                           140                                                                   180
+                         120
+
+
+
+
+                                                                                                                                           DROPOUT VOLTAGE(mV)
+                                                                                                                                                                 160
+                                                                                           120
+                         100                                                                                                                                     140
+                                                                                           100                                                                   120
+                          80
+                                                                                            80                                                                   100
+                          60                                                                                                                                      80
+                                                                                            60
+                          40                                                                                                                                      60
+                                                                                            40
+                                                                                                                                                                  40
+                          20                                                                20                                                                    20
+                           0                                                                 0                                                                     0
+                           -40 -20        0    20   40    60   80 100                             3   3.5      4   4.5  5 5.5         6                             -40 -20     0 20       40   60      80 100
+                                                                                                            INPUT VOLTAGE(V)
+
+
+
+                               Dropout Voltage vs.                                                EN threshold vs.                                                     EN threshold vs.
+                               Output Current                                                     Input Voltage                                                        Temperature
+                            VOUT=2.5V
+                         180                                                                1.2                                                                  0.75
+                         160                                                                1.1       EN high threshold                                           0.7
+   DROPOUT VOLTAGE(mV)
+
+
+
+
+                         140                                                                 1
+                                                                                                                                                                 0.65
+                         120                                                                0.9                                                                                     EN high threshold
+                         100                                                                                                                                      0.6
+                                                                        VEN(V)
+
+
+
+
+                                                                                                                                           VEN(V)
+                                                                                            0.8
+                          80                                                                                                                                     0.55
+                                                                                            0.7               EN low threshold
+                          60
+                                                                                                                                                                  0.5     EN low threshold
+                                                                                            0.6
+                          40
+                                                                                            0.5                                                                  0.45
+                          20
+                           0                                                                0.4                                                                   0.4
+                               0   200        400   600    800 1000                           2.5      3     3.5    4   4.5      5   5.5                            -40 -20     0     20   40   60      80 100
+                                   OUTPUT CURRENT(mA)                                                       INPUT VOLTAGE(V)
+
+
+
+
+                               Current Limit vs.                                                  Current Limit vs.                                                    Line Regulation
+                               Temperature                                                        Input Voltage                                                      IOUT=0mA and 100mA
+                          1.8                                                               1.8                                                                   0.3
+
+                         1.75                                                              1.75                                                                   0.2
+   CURRENT LIMIT(A)
+
+
+
+
+                                                                        CURRENT LIMIT(A)
+
+
+
+
+                          1.7                                                               1.7                                                                   0.1               IOUT=100mA
+
+                         1.65                                                              1.65                                                                    0
+
+                          1.6                                                               1.6                                                                  -0.1                IOUT=0mA
+
+                         1.55                                                              1.55                                                                  -0.2
+
+                          1.5                                                               1.5                                                                  -0.3
+                            -40 -20       0    20   40    60   80 100                         2.5      3      3.5  4 4.5     5       5.5                             3    3.5    4   4.5  5  5.5            6
+                                                                                                            INPUT VOLTAGE(V)                                                    INPUT VOLTAGE(V)
+
+
+
+
+MP20051 Rev.1.2                                                              www.MonolithicPower.com                                                                                                             6
+3/17/2017                                MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                                        © 2017 MPS. All Rights Reserved.
+                                                MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VIN = 2.5V, VOUT = 1.1V, CIN=2.2µF, COUT=4.7µF, TA = 25°C, unless otherwise noted.
+           Load Regulation                              Output Voltage Accuracy                              PSRR Vs. Frequency
+                                                        vs. Temperature
+                                                        IOUT=0mA
+    0.20                                         0.20                                                   80
+    0.15                                                                                                70
+                                                 0.00                                                                          IOUT=0.5A
+                                                                                                        60
+    0.10
+                                                                                                        50    IOUT=1A
+                                                -0.20
+    0.05                                                                                                40
+
+
+
+
+                                                                                             PSRR(dB)
+    0.00                                        -0.40                                                   30
+                                                                                                                        IOUT=0.01A
+   -0.05                                                                                                20
+                                                -0.60
+                                                                                                        10
+   -0.10
+                                                -0.80                                                    0
+   -0.15                                                                                                -10
+   -0.20                                        -1.00                                                   -20
+        0    0.2   0.4    0.6    0.8     1          -40 -20        0 20   40   60   80 100                1.E+01   1.E+03   1.E+05   1.E+07
+              OUTPUT CURRENT(A)                                                                                    FREQUENCY(Hz)
+
+
+
+
+MP20051 Rev.1.2                                        www.MonolithicPower.com                                                             7
+3/17/2017          MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                  © 2017 MPS. All Rights Reserved.
+                                                      MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VIN = 2.5V, VOUT = 1.1V, CIN=2.2µF, COUT=4.7µF, TA = 25°C, unless otherwise noted.
+             Input Power Start Up                              Input Power Shutdown                         EN Start Up
+             VIN=2.5V, VOUT=1.1V, IOUT=1A,                     VIN=2.5V, VOUT=1.1V, IOUT=1A,                VEN=2.5V, VOUT=1.1V, IOUT=1A,
+             with Resistor Load                                with Resistor Load                           with Resistor Load
+
+
+
+
+    VOUT                                          VOUT                                             VOUT
+500mV/div.                                    500mV/div.                                       500mV/div.
+
+
+
+
+      VIN                                               VIN                                         VEN
+   1V/div.                                           1V/div.                                      1V/div.
+
+
+     IOUT                                              IOUT                                         IOUT
+   1A/div.                                           1A/div.                                      1A/div.
+
+
+
+
+             EN Shutdown                                       Line Transient                               Line Transient
+             VEN=2.5V, VOUT=1.1V, IOUT=1A,                     VIN=2.5V to 4V, VOUT=1.1V,                   VIN=2.5V to 4V, VOUT=1.1V,
+             with Resistor Load                                IOUT=10mA, with Resistor Load                IOUT=1A, with Resistor Load
+
+
+
+                                                      VOUT                                        VOUT
+                                                   10mV/div.                                   10mV/div.
+    VOUT
+500mV/div.
+
+
+
+
+     VEN                                                VIN                                          VIN
+   1V/div.                                           2V/div.                                      2V/div.
+                                                       IOUT
+                                                     1A/div.                                        IOUT
+     IOUT
+   1A/div.                                                                                        1A/div.
+
+
+
+
+             Load Transient                                    Over Current Protection
+             VIN=2.5V, VOUT=1.1V,                              Steady State
+             IOUT=10mA to 1A, with Resistor Load               VIN=2.5V, VOUT=1.1V
+
+
+
+
+    VOUT                                           VOUT
+ 10mV/div.                                     500mV/div.
+
+
+
+
+                                                        VIN
+                                                     1V/div.
+     IOUT
+500mA/div.
+                                                       IOUT
+                                                     1A/div.
+
+
+
+
+MP20051 Rev.1.2                                          www.MonolithicPower.com                                                            8
+3/17/2017            MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                    © 2017 MPS. All Rights Reserved.
+                                               MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+FUNCTIONAL BLOCK DIAGRAM
+
+
+
+
+                                        Figure 1—Functional Block Diagram
+
+
+
+
+MP20051 Rev.1.2                                       www.MonolithicPower.com                                         9
+3/17/2017         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2017 MPS. All Rights Reserved.
+                                               MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+OPERATION
+The MP20051 is a low-dropout linear regulator                        Current Limit
+that can supply up to 1A current, which makes it                     The MP20051 includes a current limit structure
+suitable for very low voltage, low quiescent, low                    that monitors and controls the PMOS gate
+noise, and high PSRR applications such as                            voltage to limit the guaranteed maximum output
+wireless LAN transceivers, notebook computers,                       current to 1.6A.
+smartphones, and other low-power electronics.
+                                                                     Thermal Protection
+The MP20051 uses an internal PMOS as the                             Thermal protection turns off the PMOS when the
+pass element and includes both thermal                               junction temperature exceeds 150°C, allowing
+shutdown and an internal current-limiting circuit.                   the IC to cool. When the IC’s junction
+                                                                     temperature drops by 20°C, the PMOS will turn
+Dropout Voltage
+                                                                     on again. Thermal protection limits total power
+Dropout voltage is the minimum input to output
+                                                                     dissipation in the MP20051. For reliable
+differential voltage required for the regulator to
+                                                                     operation, limit the junction temperature to a
+maintain an output voltage within 100mV of its
+                                                                     maximum of 125°C.
+nominal value. Because the PMOS pass element
+behaves as a low-value resistor, the dropout                         Load-Transient Considerations
+voltage of MP20051 is only 140mV.                                    The output response of the load-transient
+                                                                     consists of a transient response and DC shift—
+Shutdown
+                                                                     the MP20051’s excellent load regulation
+The MP20051 can be switched ON or OFF by a
+                                                                     effectively limits the DC shift. The output voltage
+logic input at the EN pin: Logic high turns the
+                                                                     transient depends on the output capacitor’s value
+regulator on and logic low turns it off. Tie the EN
+                                                                     and ESR. Increasing the capacitance and
+pin to VIN if the application does not require the
+                                                                     decreasing the ESR will improve the transient
+shutdown feature. Do not float the EN pin.
+                                                                     response.
+
+
+
+
+MP20051 Rev.1.2                                       www.MonolithicPower.com                                         10
+3/17/2017         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2017 MPS. All Rights Reserved.
+                                                MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+APPLICATION INFORMATION
+Setting the Output Voltage                                            The allowable power dissipation can                     be
+The MP20051 has an externally-set output                              calculated using the following equation:
+voltage with a range of 0.8V to 5V given a 2.5V
+                                                                                    P(MAX)  TJunction  TAmbient  /  JA
+to 5.5V input. Set the output voltage using a
+resistive voltage divider from the output voltage                     Where (TJunction − TAmbient) is the temperature
+to the FB pin. The result of the voltage divider at                   differential between the junction and the
+the FB pin is:                                                        surrounding environment, θJA is the thermal
+                                                                      resistance from the junction to the ambient
+                                     R2                               environment. Connecting the exposed GND pad
+                    VFB  VOUT
+                                   R1  R2                            to a large ground pad or plane helps to channel
+Where VFB is the feedback threshold voltage (VFB                      away heat.
+= 0.8V), and VOUT is the output voltage. Thus the                     Output Capacitor Selection
+output voltage is:                                                    The MP20051 is specifically designed to work
+                                   R1  R2                            with a standard ceramic output capacitor to save
+                    VOUT  0.8                                       space and improve performance. Use a 4.7µF
+                                     R2
+                                                                      ceramic capacitor for most applications. Larger
+R2 can go as high as 100kΩ, but typical                               output capacitors will improve load transient
+applications use 10kΩ. After selecting R2, R1 is                      response and reduce noise at the cost of
+determined by:                                                        increased size.
+                             V      VFB 
+                  R1  R2   OUT        
+                                V FB      
+For example, for a 1.1V output voltage, R2 is
+10kΩ, and R1 is 3.75kΩ. You can select a
+standard 3.75kΩ (±1%) resistor for R1.
+Power Dissipation
+The power dissipation for any package depends
+on the thermal resistance of the case and circuit
+board, the temperature differential between the
+junction and ambient air, and the rate of air flow.
+The power dissipation across the device can be
+represented by the equation:
+                   P  VIN  VOUT  IOUT
+
+
+
+
+MP20051 Rev.1.2                                        www.MonolithicPower.com                                                11
+3/17/2017          MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                  © 2017 MPS. All Rights Reserved.
+                                               MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+PACKAGE INFORMATION
+                                                  QFN-8 (3mm×3mm)
+
+
+
+
+MP20051 Rev.1.2                                       www.MonolithicPower.com                                         12
+3/17/2017         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2017 MPS. All Rights Reserved.
+                                                           MP20051 – LOW NOISE HIGH PSRR 1A LINEAR REGULATOR
+
+
+                                                                           SOIC8E
+                           0.189(4.80)                                                                      0.124(3.15)
+                           0.197(5.00)                                                                      0.136(3.45)
+                       8                  5
+
+
+
+
+                                                        0.150(3.80)      0.228(5.80)                                                0.089(2.26)
+        PIN 1 ID                                        0.157(4.00)      0.244(6.20)                                                0.101(2.56)
+
+
+
+
+                       1                  4
+
+                           TOP VIEW                                                                   BOTTOM VIEW
+
+
+
+                                                                                             SEE DETAIL "A"
+
+
+                                                           0.051(1.30)
+                                                           0.067(1.70)
+                                                                                                                                          0.0075(0.19)
+                                                           SEATING PLANE
+                                                                                                                                          0.0098(0.25)
+                                                       0.000(0.00)
+        0.013(0.33)                                    0.006(0.15)
+        0.020(0.51)                                                                                         SIDE VIEW
+                                         0.050(1.27)
+                                         BSC
+
+
+                        FRONT VIEW                                                                                    0.010(0.25)
+                                                                                                                                  x 45o
+                                                                                                                      0.020(0.50)
+
+                                                                                          GAUGE PLANE
+                                                                                          0.010(0.25) BSC
+
+
+       0.024(0.61)                            0.050(1.27)
+                                                                                                               0.016(0.41)
+                                                                                              0o-8o            0.050(1.27)
+       0.063(1.60)
+                                                                                                        DETAIL "A"
+
+
+                                                  0.103(2.62)         0.213(5.40)
+                                                                                    NOTE:
+                                                                                       1) CONTROL DIMENSION IS IN INCHES. DIMENSION IN
+                                                                                          BRACKET IS IN MILLIMETERS.
+                                                                                       2) PACKAGE LENGTH DOES NOT INCLUDE MOLD FLASH,
+                                                                                          PROTRUSIONS OR GATE BURRS.
+                                                                                       3) PACKAGE WIDTH DOES NOT INCLUDE INTERLEAD FLASH
+                           0.138(3.51)                                                    OR PROTRUSIONS.
+                                                                                       4) LEAD COPLANARITY (BOTTOM OF LEADS AFTER FORMING)
+                                                                                          SHALL BE 0.004" INCHES MAX.
+          RECOMMENDED LAND PATTERN                                                     5) DRAWING CONFORMS TO JEDEC MS-012, VARIATION BA.
+                                                                                       6) DRAWING IS NOT TO SCALE.
+
+
+
+
+NOTICE: The information in this document is subject to change without notice. Users should warrant and guarantee that third
+party Intellectual Property rights are not infringed upon when integrating MPS products into any application. MPS will not
+assume any legal responsibility for any said applications.
+
+MP20051 Rev.1.2                                           www.MonolithicPower.com                                                                        13
+3/17/2017             MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                     © 2017 MPS. All Rights Reserved.

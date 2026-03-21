@@ -1,0 +1,721 @@
+                                                                                                                                 MP4420
+                                                                                          High Efficiency 2A, 36V,
+                                                                                 Synchronous Step Down Converter
+The Future of Analog IC Technology
+
+DESCRIPTION                                                                      FEATURES
+The MP4420 is a high-frequency, synchronous,                                     •        Wide 4V to 30V Continuous Operating Input
+rectified, step-down, switch-mode converter                                               Range
+with built-in power MOSFETs. It offers a very                                    •        36V Input Transient Tolerance for
+compact solution to achieve a 2A continuous                                               Automotive Load Dump
+output current with excellent load and line                                      •        90mΩ/55mΩ Low RDS(ON) Internal Power
+regulation over a wide input supply range. The                                            MOSFETs
+MP4420 has synchronous mode operation for                                        •        High-Efficiency Synchronous Mode
+higher efficiency over the output current load                                            Operation
+range.                                                                           •        Default 410kHz Switching Frequency
+Current-mode operation provides fast transient                                   •        Synchronizes to a 200kHz to 2.2MHz
+response and eases loop stabilization.                                                    External Clock
+                                                                                 •        High Duty Cycle for Automotive Cold-crank
+Full protection features include over-current
+                                                                                 •        Power-Save Mode
+protection and thermal shut down.
+                                                                                 •        Internal Soft-Start
+The MP4420 requires a minimal number of                                          •        Power Good
+readily-available standard external components,                                  •        OCP Protection and Hiccup
+and is available in a space-saving 8-pin                                         •        Thermal Shutdown
+TSOT23 package.                                                                  •        Output Adjustable from 0.8V
+                                                                                 •        Available in an 8-pin TSOT-23 package
+                                                                                 APPLICATIONS
+                                                                                 •        Automotive
+                                                                                 •        Industrial Control System
+                                                                                 •        Distributed Power Systems
+                                                                                 All MPS parts are lead-free and adhere to the RoHS directive. For MPS green
+                                                                                 status, please visit MPS website under Quality Assurance. “MPS” and “The
+                                                                                 Future of Analog IC Technology” are Registered Trademarks of Monolithic
+                                                                                 Power Systems, Inc.
+
+
+
+
+TYPICAL APPLICATION
+
+                         2               BST 5
+        VIN
+                             IN
+                  C1                                       R4
+                 22 F             MP4420                   20
+                                                           C4
+                                                          100nF L1              3.3V/2A
+  EN/SYNC                6
+                             EN/SYNC       SW 3                                           VOUT
+                                                                10 H      C2
+                         1                                               47 F
+                             PG                     R3            R1
+                                                    51k          41.2k
+                         7 VCC                  8
+                                   GND     FB
+                   C3
+                                                          R2
+                 0.1 F               4                    13k
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                                                              1
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+
+                                         ORDERING INFORMATION
+                          Part Number*                          Package                    Top Marking
+                           MP4420GJ                            TSOT23-8                     See Below
+
+                                   * For Tape & Reel, add suffix –Z (e.g. MP4420GJ–Z);
+
+                                                    TOP MARKING
+
+
+
+
+                  AFP: product code of MP4420GJ
+                  Y: year code;
+
+
+
+
+                                           PACKAGE REFERENCE
+
+
+                                                         TOP VIEW
+
+                                              PG     1                  8   FB
+
+                                               IN    2                  7   VCC
+
+                                              SW     3                  6   EN/SYNC
+
+                                            GND      4                  5   BST
+
+
+                                                          TSOT23-8
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          2
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                                  MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+
+ABSOLUTE MAXIMUM RATINGS (1)                                              Thermal Resistance
+                                                                                                          (4)
+                                                                                                                  θJA      θJC
+VIN ................................................ -0.3V to 40V         TSOT23-8 ............................. 100 ..... 55 ... °C/W
+VSW ................................................ -0.3V to 41V
+                                                                          Notes:
+VBS ....................................................... VSW+6V        1) Absolute maximum ratings are rated under room temperature
+All Other Pins ................................ -0.3V to 6V (2)              unless otherwise noted. Exceeding these ratings may
+                                                               (3)           damage the device.
+Continuous Power Dissipation (TA = +25°C)                                 2) About the details of EN pin’s ABS MAX rating, please refer to
+TSOT23-8 ................................................ 1.25W              page 14, Enable/SYNC Control section.
+Junction Temperature .............................. 150°C                 3) The maximum allowable power dissipation is a function of the
+                                                                             maximum junction temperature TJ (MAX), the junction-to-
+Lead Temperature ................................... 260°C                   ambient thermal resistance θJA, and the ambient temperature
+Storage Temperature ................. -65°C to 150°C                         TA. The maximum allowable continuous power dissipation at
+                                                                             any ambient temperature is calculated by PD (MAX) = (TJ
+Recommended Operating Conditions                                             (MAX)-TA)/θJA. Exceeding the maximum allowable power
+                                                                             dissipation will cause excessive die temperature, and the
+Continuous Supply Voltage VIN .......... 4V to 30V                           regulator will go into thermal shutdown. Internal thermal
+Output Voltage VOUT................... 0.8V to 0.9xVIN                       shutdown circuitry protects the device from permanent
+Operating Junction Temp. (TJ). -40°C to +125°C                               damage.
+                                                                          4) Measured on JESD51-7, 4-layer PCB.
+
+
+
+
+MP4420 Rev.1.0                                          www.MonolithicPower.com                                                         3
+8/5/2014             MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                    © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+ELECTRICAL CHARACTERISTICS
+VIN = 12V, TJ = +25°C, unless otherwise noted.
+Parameter                              Symbol          Condition                           Min        Typ            Max    Units
+
+Supply Current (Shutdown)                ISHDN         VEN = 0V                                                       8      μA
+
+Supply Current (Quiescent)                 IQ          VEN = 2V, VFB = 1V                              0.5           0.7    mA
+
+HS Switch-ON Resistance                 RON_HS         VBST-SW =5V                                     90            105    mΩ
+
+LS Switch-ON Resistance                  RON_LS        VCC =5V                                         55            75     mΩ
+
+Switch Leakage                          ILKG SW        VEN = 0V, VSW =12V                                             1      μA
+
+Current Limit                             ILIMIT       Under 40% Duty Cycle                 3.2        4.2           5.3     A
+
+Oscillator Frequency                       fSW         VFB=750mV                           320         410           500    kHz
+Fold-Back Frequency                        fFB         VFB<400mV                            70         100           130    kHz
+Maximum Duty Cycle                       DMAX          VFB=750mV, 410kHz                    92         95                    %
+                    (5)
+Minimum ON Time                          tON MIN                                                       70                    ns
+Sync Frequency Range                      fSYNC                                             0.2                      2.4    MHz
+Feedback Voltage                          VFB                                              780         792           804    mV
+Feedback Current                           IFB         VFB=820mV                                       10            100     nA
+EN Rising Threshold                    VEN RISING                                          1.15        1.4           1.65    V
+EN Falling Threshold                  VEN FALLING                                          1.05       1.25           1.45    V
+EN Threshold Hysteresis                 VEN_HYS                                                        150                  mV
+
+                                                       VEN=2V                                           4             6      μA
+EN Input Current                           IEN
+                                                       VEN=0                                            0            0.2     μA
+VIN Under-Voltage Lockout
+                                      INUVRISING                                            3.3        3.5           3.7     V
+Threshold-Rising
+VIN Under-Voltage Lockout
+                                     INUVFALLING                                            3.1        3.3           3.5     V
+Threshold-Falling
+
+VIN Under-Voltage Lockout
+                                       INUVHYS                                                         200                  mV
+Threshold-Hysteresis
+
+VCC Regulator                             VCC          ICC=0mA                              4.6        4.9           5.2     V
+VCC Load Regulation                                    ICC=5mA                                         1.5            4      %
+Soft-Start Period                          tSS         VOUT from 10% to 90%                0.55       1.45           2.45    ms
+                     (5)
+Thermal Shutdown                                                                           150         170                   °C
+                      (5)
+Thermal Hysteresis                                                                                     30                    °C
+PG Rising Threshold                   PGVth RISING     as percentage of VFB                86.5        90            93.5    %
+PG Falling Threshold                 PGVth FALLING     as percentage of VFB                80.5        84            87.5    %
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                                         4
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                                 MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+
+ELECTRICAL CHARACTERISTICS (continued)
+VIN = 12V, TJ = +25°C, unless otherwise noted.
+Parameter                                  Symbol          Condition                           Min        Typ       Max       Units
+
+PG Threshold Hysteresis                    PGVth_HYS        as percentage of VFB                            6                  %
+
+PG Rising Delay                           PGTd_RISING                                           40         90           160    μs
+PG Falling Delay                         PGTd_FALLING                                           30         55           95     μs
+
+PG Sink Current Capability                    VPG           Sink 4mA                                       0.1          0.3    V
+
+PG Leakage Current                           ILKG_PG                                                       10           100    nA
+Notes:
+5) Derived from bench characterization. Not tested in production
+
+
+
+
+MP4420 Rev.1.0                                         www.MonolithicPower.com                                                        5
+8/5/2014            MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                   © 2014 MPS. All Rights Reserved.
+                                              MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+
+PIN FUNCTIONS
+Package
+             Name        Description
+ Pin #
+                   Power Good. The output of this pin is an open drain and goes high if the output voltage
+    1            PG
+                   exceeds 90% of the nominal voltage.
+                   Supply Voltage. The MP4420 operates from a 4V to 30V input rail. Requires C1 to
+    2         IN
+                   decouple the input rail. Connect using a wide PCB trace.
+    3        SW    Switch Output. Connect using a wide PCB trace.
+                   System Ground. This pin is the reference ground of the regulated output voltage, and PCB
+    4        GND
+                   layout requires special care. For best results, connect to GND with copper traces and vias.
+                   Bootstrap. Requires a capacitor connected between SW and BST pins to form a floating
+    5        BST   supply across the high-side switch driver. A 20Ω resistor placed between SW and BST cap
+                   is strongly recommended to reduce SW spike voltage.
+                   Enable/Synchronize. EN high to enable the MP4420. Apply an external clock to the EN pin
+    6      EN/SYNC
+                   to change the switching frequency.
+                   Bias Supply. Decouple with 0.1μF-to-0.22μF capacitor. Select a capacitor that does not
+    7        VCC
+                   exceed 0.22μF.
+                   Feedback. Connect to the tap of an external resistor divider from the output to GND, to set
+                   the output voltage. The frequency fold-back comparator lowers the oscillator frequency
+    8         FB
+                   when the FB voltage is below 660mV to prevent current limit runaway during a short-circuit
+                   fault condition.
+
+
+
+
+MP4420 Rev.1.0                                       www.MonolithicPower.com                                          6
+8/5/2014          MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+TYPICAL CHARACTERISTICS
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          7
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+TYPICAL CHARACTERISTICS (continued)
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          8
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS
+VIN = 12V, VOUT = 3.3V, L = 10µH, RBST=20Ω, TA = +25°C, unless otherwise noted.
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          9
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VIN = 12V, VOUT = 3.3V, L = 10µH, RBST=20Ω, TA = +25°C, unless otherwise noted.
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          10
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VIN = 12V, VOUT = 3.3V, L = 10µH, RBST=20Ω, TA = +25°C, unless otherwise noted.
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          11
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VIN = 12V, VOUT = 3.3V, L = 10µH, RBST=20Ω, TA = +25°C, unless otherwise noted.
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          12
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+BLOCK DIAGRAM
+
+
+
+
+                                          Figure 1: Functional Block Diagram
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          13
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+OPERATION
+The MP4420 is a high-frequency, synchronous,                        For example, with 12V connected to VIN, RPULLUP
+rectified, step-down, switch-mode converter with                    ≥ (12V – 6.5V) ÷ 150µA = 36.7kΩ.
+built-in power MOSFETs. It offers a very compact
+                                                                    Connecting the EN pin directly to a voltage
+solution to achieve 2A continuous output current
+                                                                    source without any pullup resistor requires
+with excellent load and line regulation over a
+                                                                    limiting voltage amplitude to ≤6V to prevent
+wide input supply range.
+                                                                    damage to the Zener diode.
+The MP4420 operates in a fixed-frequency,
+peak-current–control mode to regulate the output
+voltage. An internal clock initiates a PWM cycle.
+The integrated high-side power MOSFET turns
+on and remains on until its current reaches the
+value set by the COMP voltage. When the power                                   Figure 2: 6.5V-type Zener Diode
+switch is off, it remains off until the next clock                  Connect an external clock with a range of
+cycle starts. If the current in the power MOSFET                    200kHz to 2.2MHz 2ms after output voltage is set
+does not reach the current value set by COMP                        to synchronize the internal clock rising edge to
+within 95% of one PWM period, the power                             the external clock rising edge. The pulse width of
+MOSFET will be forced to turn off.                                  external clock signal should be less than 1.7μs.
+Internal Regulator                                                  Under-Voltage Lockout
+The 5V internal regulator power most of the                         Under-voltage lockout (UVLO) protects the chip
+internal circuitries. This regulator takes the VIN                  from operating at an insufficient supply voltage.
+input and operates in the full VIN range: When VIN                  The MP4420 UVLO comparator monitors the
+exceeds 5.0V, the output of the regulator is in full                output voltage of the internal regulator, VCC. The
+regulation; when VIN falls below 5.0V, the output                   UVLO rising threshold is about 3.5V while its
+of the regulator decreases following the VIN. A                     falling threshold is 3.3V.
+0.1uF decoupling ceramic capacitor is needed at
+the pin.                                                            Internal Soft-Start
+                                                                    The soft-start prevents the converter output
+Error Amplifier                                                     voltage from overshooting during startup. When
+The error amplifier compares the FB pin voltage                     the chip starts, the internal circuitry generates a
+against the internal 0.8V reference (REF) and                       soft-start voltage (SS) that ramps up from 0V to
+outputs a COMP voltage—this COMP voltage                            1.2V. When SS is lower than REF, SS overrides
+controls the power MOSFET current. The                              REF so the error amplifier uses SS as the
+optimized     internal    compensation network                      reference. When SS exceeds REF, the error
+minimizes the external component count and                          amplifier uses REF as the reference. The SS
+simplifies the control loop design.                                 time is internally set to 1.5ms.
+Enable/SYNC Control                                                 Over-Current Protection and Hiccup
+EN/SYNC is a digital control pin that turns the                     The MP4420 has cycle-by-cycle over current limit
+regulator on and off: Drive EN high to turn on the                  when the inductor current peak value exceeds
+regulator, drive it low to turn it off. An internal                 the set current limit threshold. If the output
+500kΩ resistor from EN/SYNC to GND allows                           voltage starts to drop until FB is below the Under-
+EN/SYNC to be floated to shut down the chip.                        Voltage (UV) threshold—typically 84% below the
+The EN pin is clamped internally using a 6.5V                       reference—the MP4420 enters hiccup mode to
+series Zener diode, as shown in Figure 2.                           periodically restart the part. This protection
+Connect the EN input pin through a pullup
+resistor to any voltage connected to the VIN pin—
+the pullup resistor limits the EN input current to
+less than 150µA.
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          14
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+mode is especially useful when the output is                        Startup and Shutdown
+dead-shorted to ground. The average short-
+                                                                    If both VIN and EN exceed their appropriate
+circuit current is greatly reduced to alleviate the
+                                                                    thresholds, the chip starts: The reference block
+thermal issue and to protect the regulator. The
+                                                                    starts first, generating stable reference voltage
+MP4420 exits the hiccup mode once the over-
+                                                                    and currents, and then the internal regulator is
+current condition is removed.
+                                                                    enabled. The regulator provides stable supply for
+Thermal Shutdown                                                    the remaining circuitries.
+Thermal shutdown prevents the chip from
+                                                                    Three events can shut down the chip: EN low, VIN
+operating at exceedingly high temperatures.
+                                                                    low, and thermal shutdown. In the shutdown
+When the silicon die temperature exceeds 170°C,
+                                                                    procedure, the signaling path is first blocked to
+it shuts down the whole chip. When the
+                                                                    avoid any fault triggering. The COMP voltage and
+temperature drops below its lower threshold
+                                                                    the internal supply rail are then pulled down. The
+(typically 140°C) the chip is enabled again.
+                                                                    floating driver is not subject to this shutdown
+  Floating Driver and Bootstrap Charging                            command.
+An external bootstrap capacitor power the
+                                                                    Power Good
+floating-power-MOSFET driver. A dedicated
+internal regulator (see figure 3) charges and                       The MP4420 has power good (PG) output. The
+regulates the bootstrap capacitor voltage to ~5V.                   PG pin is the open drain of a MOSFET. It should
+When the voltage between the BST and SW                             be connected to VCC or some other voltage
+nodes drops below regulation, a PMOS pass                           source through a resistor (e.g. 100kΩ). In the
+transistor connected from VIN to BST turns on.                      presence of an input voltage, the MOSFET turns
+The charging current path is from VIN, BST and                      on so that the PG pin is pulled to low before SS
+then to SW. The external circuit should provide                     is ready. After VFB reaches 90%×REF, the PG pin
+enough voltage headroom to facilitate charging.                     is pulled high after a delay, typically 90μs. When
+As long as VIN is significantly higher than SW, the                 VFB drops to 84%×REF, the PG pin is pulled low.
+bootstrap capacitor remains charged. When the                       Also, PG is pulled low if thermal shutdown or EN
+HS-FET is ON, VIN ≈ VSW so the bootstrap                            is pulled low.
+capacitor cannot charge. When the LS-FET is
+ON, VIN−VSW reaches its maximum for fast
+charging. When there is no inductor current,
+VSW=VOUT so the difference between VIN and VOUT
+can charge the bootstrap capacitor. The floating
+driver has its own UVLO protection, with a rising
+threshold of 2.2V and hysteresis of 150mV. A
+20Ω resistor placed between SW and BST cap is
+strongly recommended to reduce SW spike
+voltage.
+.
+
+
+
+
+   Figure 3: Internal Bootstrap Charging Circuit
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          15
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                                MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+APPLICATION INFORMATION
+Setting the Output Voltage                                            Choose the inductor ripple current to be
+The external resistor divider sets the output                         approximately 30% of the maximum load current.
+voltage (see Typical Application on page 1). The                      The maximum inductor peak current is:
+feedback resistor R1 also sets the feedback loop
+bandwidth with the internal compensation                                                                        ΔIL
+                                                                                           IL(MAX ) = ILOAD +
+capacitor. Choose R1 around 40kΩ. R2 is then                                                                     2
+given by:                                                             Use a larger inductor for improved efficiency
+                                 R1                                   under light-load conditions—below 100mA.
+                    R2 =
+                              VOUT
+                                    −1
+                             0.792V                                   VIN UVLO Setting
+The T-type network—as shown in Figure 4—is                            MP4420 has internal fix under voltage lock out
+highly recommended when VOUT is low.                                  (UVLO) threshold: rising threshold is 3.5V while
+                                                                      falling threshold is about 3.3V. For the application
+                                                                      needs higher UVLO point, external resistor
+                                                                      divider between EN and IN as shown in figure 4
+                                                                      can be used to get higher equivalent UVLO
+                                                                      threshold.
+
+                                                                                     VIN               IN
+
+                 Figure 4: T-Type Network                                                    R5
+                                                                                                       EN
+RT+R1 is used to set the loop bandwidth.
+Basically, higher RT+R1, lower bandwidth. To                                                R6                  500k
+ensure the loop stability, it is strongly
+recommended to limit the bandwidth lower than
+40kHz based on the 410kHz default fsw. Table 1
+lists the recommended T-type resistors value for                          Figure 5: Adjustable UVLO using EN divider
+common output voltages.                                               The UVLO threshold can be computed from
+ Table 1: Resistor Selection for Common Output                        below two equations:
+                    Voltages
+                                                                                                      R5
+ VOUT (V)     R1 (kΩ)      R2 (kΩ)   RT (kΩ)                                    INUVRISING = (1 +            ) × VEN_RISING
+                                                                                                    500k//R6
+    3.3           41.2 (1%)       13 (1%)        51 (1%)
+     5            41.2 (1%)      7.68 (1%)       51 (1%)                                              R5
+                                                                              INUVFALLING = (1 +             ) × VEN_FALLING
+                                                                                                    500k//R6
+Selecting the Inductor
+                                                                      Where VEN_RISING=1.4V, VEN_FALLING=1.25V.
+Use a1µH-to-10µH inductor with a DC current
+rating of at least 25% percent higher than the                        When choose R5, make sure it is big enough to
+maximum load current for most applications. For                       limit the current flows into EN pin lower than
+highest efficiency, an inductor with small DC                         150uA.
+resistance is recommended. For most designs,
+the inductance value can be derived from the
+following equation.
+                         VOUT × (VIN − VOUT )
+                  L1 =
+                           VIN × ΔIL × fOSC
+Where ΔIL is the inductor ripple current.
+
+
+MP4420 Rev.1.0                                        www.MonolithicPower.com                                                  16
+8/5/2014           MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                  © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+Selecting the Input Capacitor                                       voltage ripple at input. The input voltage ripple
+The input current to the step-down converter is                     caused by capacitance can be estimated by:
+discontinuous, therefore requires a capacitor is to                                         ILOAD  V      ⎛    V    ⎞
+                                                                                  ΔVIN =          × OUT × ⎜ 1 − OUT ⎟
+supply the AC current to the step-down converter                                           fS × C1 VIN ⎝        VIN ⎠
+while maintaining the DC input voltage. Use low ESR
+capacitors for the best performance. Use ceramic                    Selecting the Output Capacitor
+capacitors with X5R or X7R dielectrics for best                     The output capacitor (C2) maintains the DC
+results because of their low ESR and small                          output voltage. Use ceramic, tantalum, or low-
+temperature coefficients.                                           ESR electrolytic capacitors. For best results, use
+For most application, a 22µF ceramic capacitor is                   low ESR capacitors to keep the output voltage
+sufficient to maintain the DC input voltage. And it                 ripple low. The output voltage ripple can be
+is strongly recommended to use another lower                        estimated by:
+value capacitor (e.g. 0.1µF) with small package                                     VOUT ⎛ VOUT ⎞ ⎛                     1     ⎞
+size (0603) to absorb high frequency switching                           ΔVOUT =          × ⎜1 −     ⎟ × ⎜ RESR +             ⎟
+                                                                                   fS × L1 ⎝     VIN ⎠ ⎝          8 × fS × C2 ⎠
+noise. Make sure place the small size capacitor
+as close to IN and GND pins as possible (see                        Where L1 is the inductor value and RESR is the
+PCB LAYOUT section).                                                equivalent series resistance (ESR) value of the
+Since C1 absorbs the input switching current, it                    output capacitor.
+requires an adequate ripple current rating. The RMS                 For ceramic capacitors, the capacitance
+current in the input capacitor can be estimated by:                 dominates the impedance at the switching
+                                                                    frequency, and the capacitance causes the
+                             VOUT ⎛⎜ VOUT ⎞⎟
+            I C1 = ILOAD ×        × 1−                              majority of the output voltage ripple. For
+                              VIN ⎜⎝   VIN ⎟⎠
+                                                                    simplification, the output voltage ripple can be
+The worse case condition occurs at VIN = 2VOUT,                     estimated by:
+where:                                                                                            VOUT        ⎛ V ⎞
+                                                                                  ΔVOUT =                   × ⎜ 1 − OUT ⎟
+                            I                                                               8 × fS × L1 × C2 ⎝
+                                                                                                 2
+                                                                                                                    VIN ⎠
+                      IC1 = LOAD
+                              2                                     For tantalum or electrolytic capacitors, the ESR
+For simplification, choose an input capacitor with                  dominates the impedance at the switching
+an RMS current rating greater than half of the                      frequency. For simplification, the output ripple
+maximum load current.                                               can be approximated to:
+The input capacitor can be electrolytic, tantalum                                            VOUT ⎛       V    ⎞
+                                                                                 ΔVOUT =           × ⎜ 1 − OUT ⎟ × RESR
+or ceramic. When using electrolytic or tantalum                                             fS × L1 ⎝      VIN ⎠
+capacitors, add a small, high quality ceramic
+capacitor (e.g. 1μF) placed as close to the IC as                   The characteristics of the output capacitor also
+possible. When using ceramic capacitors, make                       affect the stability of the regulation system. The
+sure that they have enough capacitance to                           MP4420 can be optimized for a wide range of
+provide sufficient charge to prevent excessive                      capacitance and ESR values.
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                                       17
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                                        MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+BST Resistor and External BST Diode                                      3) Use large ground plane directly connect to
+                                                                         GND pin. Add vias near the GND pin if bottom
+A 20ohm resistor in series with BST capacitor is
+                                                                         layer is ground plane.
+recommended to reduce the SW spike voltage.
+Higher resistance is better for SW spike                                 4) Route SW, BST away from sensitive analog
+reduction, but will compromise the efficiency on                         areas such as FB.
+the other hand.                                                          5) Place the T-type feedback resistor close to
+An external BST diode can enhance the                                    chip to ensure the trace which connects to FB pin
+efficiency of the regulator when the duty cycle is                       as the short as possible.
+high (>65%). A power supply between 2.5V and
+5V can be used to power the external bootstrap
+diode and VCC or VOUT is the good choice of
+this power supply in the circuit as shown in
+Figure 6.
+             VCC 7
+
+                                 External BST diode
+                                       1N4148
+             BST 5
+                                                  VCC/VOUT
+                                RBST
+
+                                CBST       L
+                                                        VOUT
+                       3
+                 SW
+                                                      COUT
+
+                                                                                                   Top Layer
+  Figure 6: Optional External Bootstrap Diode to
+                Enhance Efficiency
+The recommended external BST diode is IN4148,
+and the BST capacitor value is 0.1µF to 1μF.
+PCB Layout
+PCB layout, especially the input capacitor and
+VCC capacitor placement, is very important to
+achieve stable operation. For the best results,
+follow these guidelines:
+1) Place the ceramics input capacitor as close to
+IN and GND pins as possible, especially the
+small package size (0603) input bypass capacitor.
+Keep the connection of input capacitor and IN pin
+as short and wide as possible.
+2) Place the VCC capacitor to VCC pin and GND                                                   Bottom Layer
+pin as close as possible. Make the trace length of                                Figure 7: Recommended PCB Layout
+VCC pin-VCC capacitor anode-VCC capacitor
+cathode-chip GND pin as short as possible.
+
+
+
+
+MP4420 Rev.1.0                                           www.MonolithicPower.com                                          18
+8/5/2014              MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                     © 2014 MPS. All Rights Reserved.
+                                             MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+TYPICAL APPLICATION CIRCUITS
+
+
+
+
+                                  Figure 8: 3.3V Output Typical Application Circuit
+
+
+
+
+MP4420 Rev.1.0                                      www.MonolithicPower.com                                          19
+8/5/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                © 2014 MPS. All Rights Reserved.
+                                              MP4420 – 36V, 2A SYNCHRONOUS STEP-DOWN CONVERTER
+
+
+
+PACKAGE INFORMATION
+                                                           TSOT23-8
+
+
+
+
+                 TOP VIEW                                          RECOMMENDED LAND PATTERN
+
+
+
+
+                                           SEATING PLANE
+
+
+                                                                          SEE DETAIL ’’A’’
+
+
+
+
+             FRONT VIEW                                                             SIDE VIEW
+
+
+
+
+                                                           NOTE:
+
+                                                           1) ALL DIMENSIONS ARE IN MILLIMETERS.
+                                                           2) PACKAGE LENGTH DOES NOT INCLUDE MOLD
+                                                           FLASH, PROTRUSION OR GATE BURR.
+                                                           3) PACKAGE WIDTH DOES NOT INCLUDE
+                                                           INTERLEAD FLASH OR PROTRUSION.
+                                                           4) LEAD COPLANARITY (BOTTOM OF LEADS AFTER
+                                                           FORMING) SHALL BE 0.10 MILLIMETERS MAX.
+                                                           5) JEDEC REFERENCE IS MO-193, VARIATION BA.
+             DETAIL ’’A’’                                  6) DRAWING IS NOT TO SCALE.
+
+
+
+
+NOTICE: The information in this document is subject to change without notice. Users should warrant and guarantee that third
+party Intellectual Property rights are not infringed upon when integrating MPS products into any application. MPS will not
+assume any legal responsibility for any said applications.
+
+MP4420 Rev.1.0                                       www.MonolithicPower.com                                            20
+8/5/2014          MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.

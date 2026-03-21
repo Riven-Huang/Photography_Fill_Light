@@ -1,0 +1,811 @@
+                                                                                                                               MP1907
+                                                                                                 100V, 2.5A, High Frequency
+                                                                                                     Half-bridge Gate Driver
+The Future of Analog IC Technology
+
+DESCRIPTION                                                                    FEATURES
+The MP1907 is a high frequency, 100V half                                      •     Drives N-channel MOSFET half bridge
+bridge N-channel power MOSFET driver. Its low                                  •     100V VBST voltage range
+side and high side driver channels are                                         •     Input signal overlap protection
+independently controlled and matched with less                                 •     On-chip bootstrap diode
+than 5ns in time delay. Under-voltage lock-out                                 •     Typical 20ns propagation delay time
+both high side and low side supplies force their                               •     Less than 5ns gate drive mismatch
+outputs low in case of insufficient supply. Both                               •     Drive 1nF load with 12ns/9ns rise/fall times
+outputs will remain low until a rising edge on                                       with 12V VDD
+either input is detected. The integrated
+                                                                               •     TTL compatible input
+bootstrap diode reduces external component
+                                                                               •     Less than 150μA quiescent current
+count.
+                                                                               •     Less than 5μA shutdown current
+                                                                               •     UVLO for both high side and low side
+                                                                               •     In 3×3mm QFN10 Packages
+                                                                               APPLICATIONS
+                                                                               •     Battery Powered Hand Tool
+                                                                               •     Telecom half bridge power supplies
+                                                                               •     Avionics DC-DC converters
+                                                                               •     Active-clamp Forward Converters
+                                                                               All MPS parts are lead-free and adhere to the RoHS directive. For MPS green
+                                                                               status, please visit MPS website under Products, Quality Assurance page.
+                                                                               “MPS” and “The Future of Analog IC Technology” are registered trademarks of
+                                                                               Monolithic Power Systems, Inc.
+
+
+
+
+TYPICAL APPLICATION
+                               3.3V                    BATT
+
+
+
+
+                                                                    VDD
+                                                      1                                     3     BST                          M
+
+                                            INH   7                       Floating          4     DRVH
+                                                          CONTROL
+
+
+
+
+                                                                           Driver
+                       Micro                      8                                         5     SW
+                                            INL
+                      Controller
+                                                                          Low -side         10    DRVL
+                                                                           Driver
+                                            EN    6
+                                                                          9         MP1907
+                                                                              VSS
+
+
+
+
+MP1907 Rev. 1.2                                       www.MonolithicPower.com                                                                           1
+4/16/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.
+                                    MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+                                            ORDERING INFORMATION
+                            Part Number*                       Package                        Top Marking
+                             MP1907GQ                       QFN10 (3 x 3 mm)                     ADE
+
+                                    * For Tape & Reel, add suffix –Z (e.g. MP1907GQ–Z);
+
+                                               PACKAGE REFERENCE
+
+
+
+
+ABSOLUTE MAXIMUM RATINGS (1)                                             Thermal Resistance
+                                                                                                         (5)
+                                                                                                                 θJA       θJC
+Supply Voltage (VDD).....................-0.3V to +20V                   QFN10 (3x3)........................... 50 ...... 12... °C/W
+SW Voltage (VSW) .........................-5.0V to 105V
+BST Voltage (VBST) .......................-0.3V to 110V                  Notes:
+                                                                         1) Exceeding these ratings may damage the device.
+BST to SW ....................................-0.3V to +18V                  2) The maximum allowable power dissipation is a function
+DRVH to SW .............. -0.3V to (BST-SW) +0.3V                                   of the maximum junction temperature TJ (MAX), the
+                                                                                    junction-to-ambient thermal resistance θJA, and the
+DRVL to VSS ...................... -0.3V to (VDD+0.3V)                              ambient temperature TA. The maximum allowable
+All Other Pins ..................................-0.3V to 20V                       continuous power dissipation at any ambient
+                                                              (2)                   temperature is calculated by PD (MAX) = (TJ (MAX)-
+Continuous Power Dissipation (TA =+25°C)                                            TA)/θJA. Exceeding the maximum allowable power
+QFN10 (3x3) .............................................. 2.5W                     dissipation will cause excessive die temperature, and
+                                                                                    the regulator will go into thermal shutdown. Internal
+Junction Temperature ...............................150°C                           thermal shutdown circuitry protects the device from
+Lead Temperature ....................................260°C                          permanent damage.
+Storage Temperature............... -65°C to +150°C                       3) The device is not guaranteed to function outside of its
+                                                                            operating conditions.
+                                                           (3)           4) 4.5V is only a typical value for minimum supply voltage at VDD
+Recommended Operating Conditions                                            falling
+                                                             (4)         5) Measured on JESD51-7, 4-layer PCB.
+Supply Voltage (VDD)................. +4.5V to 18V
+SW Voltage (VSW) .........................-1.0V to 100V
+SW slew rate......................................<50V/nsec
+Operating Junction Temp. (TJ). -40°C to +125°C
+
+
+
+
+MP1907 Rev. 1.2                                         www.MonolithicPower.com                                                         2
+4/16/2014           MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                   © 2014 MPS. All Rights Reserved.
+                                  MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+ELECTRICAL CHARACTERISTICS
+VDD = VBST-VSW=12V, VSS=VSW = 0V, VEN=3.3V, No load at DRVH and DRVL, TA= +25°C, unless
+otherwise noted.
+Parameter                                  Symbol Condition                                     Min       Typ         Max        Units
+Supply Current
+VDD Shutdown Current                         ISHDN     VEN=0,                                               0          1         µA
+VDD quiescent current                         IDDQ     INL=INH=0                                           80         100        µA
+VDD operating current                         IDDO     fsw=500kHz                                          2.8        3.5        mA
+Floating driver quiescent current            IBSTQ     INL=0, INH=0 or 1                                   55         70         µA
+Floating driver operating current            IBSTO     fsw=500kHz                                          2.1         3         mA
+Leakage Current                               ILK      BST=SW=100V                                        0.05         1          μA
+Inputs
+INL/INH High                                                                                    2.4                               V
+INL/INH Low                                                                                                            1          V
+INL/INH Hysteresis                                                                                         0.6                    V
+INL/INH      internal   pull-down
+                                              RIN                                                         185                     kΩ
+resistance
+Under Voltage Protection
+VDD rising threshold                        VDDR                                                4.6        5.0        5.4         V
+VDD falling threshold                       VDDF                                                4.1        4.5        4.9         V
+(BST-SW) rising threshold                   VBSTR                                               4.6        5.0        5.4         V
+(BST-SW) falling threshold                  VBSTF                                               4.1        4.5        4.9         V
+EN Input Logic Low                                                                                                    0.7         V
+EN Input Logic High                                                                             1.5                               V
+EN Hysteresis                                                                                             100                    mV
+                                                       VEN=2V, TA=+25°C                                    10                     µA
+EN Input Current                              IEN                                                                          (6)
+                                                       VEN=5V, TA=-10°C to +70°C                                      35          µA
+EN internal pull-down resistance             REN                                                          200                     kΩ
+Bootstrap Diode
+Bootstrap diode VF @ 100uA                    VF1                                                         0.55                    V
+Bootstrap diode VF @ 100mA                    VF2                                                           1                     V
+Bootstrap diode dynamic R                     RD       @ 100mA                                             2.7                    Ω
+Low Side Gate Driver
+Low level output voltage                     VOLL      IO=100mA                                           0.15        0.22        V
+High level output voltage to rail            VOHL      IO=-100mA                                          0.45        0.6         V
+                                                       VDRVL=0V, VDD=4.5V (8)                             0.15                    A
+Peak pull-up current(7)                      IOHL      VDRVL=0V, VDD=12V                                   1.5                    A
+                                                       VDRVL=0V, VDD=16V                                  2.5                     A
+                                                       VDRVL=VDD=4.5V (8)                                 0.25                    A
+Peak pull-down current(7)                     IOLL     VDRVL=VDD=12V                                      2.5                     A
+                                                       VDRVL=VDD=16V                                       3.5                    A
+Floating Gate Driver
+Low level output voltage                     VOLH      IO=100mA                                           0.15        0.22        V
+
+
+MP1907 Rev. 1.2                                       www.MonolithicPower.com                                                            3
+4/16/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.
+                                         MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+ELECTRICAL CHARACTERISTICS (continued)
+VDD = VBST-VSW=12V, VSS=VSW = 0V, VEN=3.3V, No load at DRVH and DRVL, TA= +25°C, unless
+otherwise noted.
+Parameter                                      Symbol Condition                                    Min       Typ         Max     Units
+High level output voltage to rail               VOHH  IO=-100mA                                              0.45        0.6      V
+                                                      VDRVH=0V , VBST - VSW =5V (9)                          0.25                 A
+Peak pull-up current(7)                         IOHH  VDRVH=0V, VDD=12V                                      1.5                  A
+                                                      VDRVH=0V, VDD=16V                                      2.5                  A
+                                                      VDRVH=VBST - VSW =5V (9)                               0.65                 A
+Peak pull-down current(7)                         IOLH        VDRVH=VDD=12V                                   2.5                 A
+                                                              VDRVH=VDD=16V                                   3.5                 A
+Switching Spec. --- Low Side Gate Driver
+Turn-off propagation delay
+                                     TDLFF                                                                    20                  ns
+INL falling to DRVL falling
+Turn-on propagation delay
+                                     TDLRR                                                                    20                  ns
+INL rising to DRVL rising
+DRVL rise time                                                CL=1nF                                          12                  ns
+DRVL fall time                                                CL=1nF                                           9                  ns
+Switching Spec. --- Floating Gate Driver
+Turn-off propagation delay
+                                     TDHFF                                                                    20                  ns
+INL falling to DRVH falling
+Turn-on propagation delay
+                                     TDHRR                                                                    18                  ns
+INL rising to DRVH rising
+DRVH rise time                                                CL=1nF                                          12                  ns
+DRVH fall time                                                CL=1nF                                           9                  ns
+Switching Spec. --- Matching
+Floating driver turn-off to low side
+                                     TMON                                                                      1          5       ns
+drive turn-on
+Low side driver turn-off to floating
+                                     TMOFF                                                                     1          5       ns
+driver turn-on
+Minimum input pulse width that
+                                      TPW                                                                                50(7)    ns
+changes the output
+Bootstrap diode turn-on or turn-off
+                                      TBS                                                                    10(7)                ns
+time
+Note:
+6)   Based on characterization data. Not production tested.
+7)   Guaranteed by design.
+8)   After startup VDD fall to 4.5V
+9)   After startup VBST- VSW fall to 5V
+                                                                                         INL
+
+                              INPUT
+                            (INH, INL)
+                                                                                         INH
+                                             TDHRR, TDLRR
+
+                                                                   TDHFF, TDLFF          DRVL
+                              OUTPUT
+                              (DRVH,                                                               TMON      TMOFF
+                               DRVL)                                                     DRVH
+
+
+
+                                                    Figure 1—Timing Diagram
+
+
+MP1907 Rev. 1.2                                          www.MonolithicPower.com                                                         4
+4/16/2014            MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                    © 2014 MPS. All Rights Reserved.
+                                   MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+PIN FUNCTIONS
+Package
+             Name       Description
+ Pin #
+                        Supply input. This pin supplies power to all the internal circuitry. A decoupling capacitor to
+     1        VDD
+                        ground must be placed close to this pin to ensure stable and clean supply.
+     2            NC    No Connection.
+                        Bootstrap. This is the positive power supply for the internal floating high-side MOSFET
+     3        BST
+                        driver. Connect a bypass capacitor between this pin and SW pin.
+     4       DRVH       Floating driver output.
+     5        SW        Switching node.
+     6         EN       On/off Control.
+     7        INH       Control signal input for the floating driver.
+     8        INL       Control signal input for the low side driver.
+             VSS,
+     9      Exposed Chip ground. Connect to Exposed pad to VSS for proper thermal operation.
+              Pad
+    10       DRVL Low side driver output.
+
+
+
+
+MP1907 Rev. 1.2                                        www.MonolithicPower.com                                         5
+4/16/2014          MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                  © 2014 MPS. All Rights Reserved.
+                                                      MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS
+VDD =12V, VSS=VSW = 0V, TA= +25°C, unless otherwise noted.
+      IDDO Operation Current vs.      IBSTO Operation Current vs.                                                                                             High Level Output
+      Frequency                       Frequency                                                                                                               Voltage vs.Temperature
+                  6                                                                      4                                                         0.50
+                                                                                                                                                   0.45         VBST=VDD=12V
+                  5
+                                                                                                                                                   0.40
+                                                                                         3
+                  4               T=0oC                                                                                                            0.35
+
+
+
+
+                                                                                                                                      VOHL,VOHH (V)
+                                                                                                                                                   0.30
+                  3                                                                      2                                                         0.25
+                                                                                                                                                   0.20
+                  2
+                                                                                                                                                   0.15
+                                                                                         1
+                  1                                                                                                                                0.10
+                                                                                                                                                   0.05
+                  0                                                                      0                                                         0.00
+                   0     200   400        600     800   1000                              0      200   400        600    800   1000                   -50             0         50       100    150
+
+
+
+
+                      Low Level Output Voltage vs.                                            Undervoltage Lockout                                            Undervoltage Lockout
+                      Temperature                                                             Threshold vs.Temperature                                        Hysteresis vs.Temperature
+             0.50                                                                      5.10                                                             510
+             0.45       VBST=VDD=12V                                                   5.08
+                                                                                                                                                        500
+             0.40                                                                      5.06         VBSTR
+                                                                                                                                                                            VBSTH
+             0.35
+
+                                                                                                                                      VBSTH,VDDH (mV)
+                                                                                       5.04                                                             490
+                                                              VBSTR,VDDR (V)
+ VOLL,VOLH (V)
+
+
+
+
+             0.30
+                                                                                       5.02
+             0.25                                                                                                                                       480
+                                                                                       5.00            VDDR
+             0.20
+                                                                                       4.98                                                             470                   VDDH
+             0.15
+             0.10                                                                      4.96
+                                                                                                                                                        460
+             0.05                                                                      4.94
+             0.00                                                                      4.92                                                             450
+                -50        0         50         100     150                               -50      0         50         100    150                        -50         0         50       100    150
+
+
+
+
+                      Propagation Delay vs.                                                   Bootstrap Diode I-V                                             Quiescent Current vs.
+                      Temperature                                                             Characteristics                                                 Voltage
+                 20                                                                      1                                                               90
+
+                 19                   TDHRR                                                                                                              80           IDDQ vs. VDD
+                                                                FORWARD CURRENT (A)
+
+
+
+
+                 18                                                                     0.1                                                              70
+                                                                                                                                                         60
+                 17                             TDLFF
+                          TDLRR                                                        0.01                                                              50
+                 16                       TDHFF                                                                                                                               IBSTQ vs. V BST
+                                                                                                                                                         40
+                 15
+                                                                                      0.001                                                              30
+                 14                                                                                                                                      20
+                 13                                                           0.0001                                                                     10
+                  -50      0         50         100     150                         0.5           0.6 0.7  0.8  0.9             1                          0      4          8    12      16    20
+                                                                                                 FORWARD VOLTAGE (V)                                                      VDD,VBST (V)
+
+
+
+
+MP1907 Rev. 1.2                                                    www.MonolithicPower.com                                                                                                            6
+4/16/2014                      MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                              © 2014 MPS. All Rights Reserved.
+                                  MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VDD =12V, VSS=VSW = 0V, TA= +25°C, unless otherwise noted.
+                                      Peak Current vs.
+                                      VDD Voltage
+                                                                4
+                                                               3.5
+                                                                3               IOLH
+
+
+
+
+                                            PEAK CURRENT (A)
+                                                               2.5
+                                                                         IOLL
+                                                                2
+                                                               1.5                      IOHL
+                                                                1           IOHH
+                                                               0.5
+                                                                0
+                                                                     8     10      12      14   16   18   20
+                                                                                        VDD (V)
+
+
+
+
+MP1907 Rev. 1.2                                       www.MonolithicPower.com                                         7
+4/16/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.
+                                   MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VDD =12V, VSS=VSW = 0V, TA= +25°C, unless otherwise noted.
+          Turn-on Propagation Delay                 Turn-on Propagation Delay                    Turn-off Protection Delay
+
+
+                      20ns                                      20ns                                              18ns
+
+
+                                                                                         IINH
+                                                                                       2V/div.
+  INH                                        INL
+2V/div.                                   2V/div.
+
+
+DRVH                                       DRVL
+                                                                                       DRVH
+5V/div.                                   5V/div.
+                                                                                       5V/div.
+
+
+
+
+          Turn-off Protection Delay                 Drive Rise Time (1nF Load)                   Drive Rise Time (1nF Load)
+
+
+                         18ns
+                                                                                                                 8ns
+                                                                  12ns
+
+   INL
+2V/div.
+                                          DRVH                                          DRVL
+                                          5V/div.                                      5V/div.
+
+
+ DRVL
+5V/div.
+
+
+
+
+          Drive Fall Time (1nF Load)                Drive Fall Time (1nF Load)                   Input Signal Overlap Protection
+
+
+                          5.2ns                                        5.2ns
+
+                                                                                    INL & INH
+                                                                                       5V/div.
+DRVH                                       DRVL
+5V/div.                                   5V/div.
+                                                                                        DRVL
+                                                                                      10V/div.
+
+
+                                                                                       DRVH
+                                                                                      10V/div.
+
+
+
+
+MP1907 Rev. 1.2                                        www.MonolithicPower.com                                                 8
+4/16/2014          MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                  © 2014 MPS. All Rights Reserved.
+                                                        MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VDD =5V, after startup VDD falls to 5V, VSS=VSW = 0V, TA= +25°C, unless otherwise noted.
+      IDDO Operation Current vs.         IBSTO Operation Current vs.      High Level Output
+      Frequency                          Frequency                        Voltage vs.Temperature
+                                                                      VBST- VSW=5V
+                 1.0                                            0.8                                                       1.2
+                                                                                                                                  VBST=VDD=5V
+                                                                                                                          1.0
+                 0.8
+                                                                0.6
+
+
+
+
+                                                                                                          VOHL,VOHH (V)
+                                                                                                                          0.8
+                 0.6
+                                                                0.4                                                       0.6
+                 0.4
+                                                                                                                          0.4
+                                                                0.2
+                 0.2
+                                                                                                                          0.2
+
+                 0.0                                            0.0                                                       0.0
+                       0   200   400        600    800 1000           0   200   400     600    800 1000                     -50     0      50   100   150
+                              FREQUENCY (kHz)                                FREQUENCY (kHz)
+
+
+
+
+                       Low Level Output Voltage vs.                   Propagation Delay vs.
+                       Temperature                                    Temperature
+                0.40                                            45
+                0.35       VBST=VDD=5V
+                                                                40
+                0.30
+VOLL,VOLH (V)
+
+
+
+
+                0.25                                            35         TDLRR
+                0.20
+                0.15                                            30                   TDLFF
+
+                0.10
+                                                                25
+                0.05
+                0.00                                            20
+                   -50       0         50         100     150     -50       0         50      100   150
+
+
+
+
+MP1907 Rev. 1.2                                                      www.MonolithicPower.com                                                           9
+4/16/2014                        MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                                © 2014 MPS. All Rights Reserved.
+                                    MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+VDD =5V, after startup VDD falls to 5V, VSS=VSW = 0V, TA= +25°C, unless otherwise noted.
+     Turn-on Propagation Delay          Turn-off Propagation Delay      Drive Rise Time (1nF Load)
+
+
+                             28ns                                           30ns                                       20ns
+
+
+                                               INL
+                                            2V/div.
+   INL                                                                                     DRVL
+2V/div.                                                                                   2V/div.
+
+
+ DRVL                                        DRVL
+2V/div.                                     2V/div.
+
+
+
+
+          Drive Fall Time (1nF Load)
+
+
+
+                            8ns
+
+
+
+ DRVL
+2V/div.
+
+
+
+
+MP1907 Rev. 1.2                                        www.MonolithicPower.com                                                10
+4/16/2014          MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                  © 2014 MPS. All Rights Reserved.
+                                  MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+BLOCK DIAGRAM
+
+
+
+
+                                         Figure 2—Function Block Diagram
+
+
+
+
+MP1907 Rev. 1.2                                       www.MonolithicPower.com                                         11
+4/16/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.
+                                    MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+OPERATION
+Switch Shoot-through Protection                                          Under Voltage Lock Out
+                                                                         When VDD or BST goes below their respective
+The input signals of INH and INL are controlled                          UVLO thresholds, both DRVH and DRVL
+independently. Input shoot-through protection                            outputs will go low to turn off both FETs. Once
+circuitry is implemented to prevent shoot-                               VDD rises above the UVLO threshold, both
+through between the HSFET and LSFET                                      DRVH and DRVL will stay low until a rising
+outputs. Only one of the FET drivers can be ON                           edge is detected on either INH or INL.
+at one time. If both INH and INL are high at the
+same time, both HSFET and LSFET will be                                  The truth table in Table 1 details the operation
+OFF.                                                                     of the HSFET and LSFET under different INH,
+                                                                         INL and UVLO conditions
+
+
+                            Table1 States of Driver Output under different conditions
+               BST-SW                                                                        UVLO Latch                 Operating
+    EN                        VDD Voltage         INH       INL     DRVH        DRVL
+               Voltage                                                                         status                   Condition
+                                                                               200kΩ
+     0              X                X             X         X       Open                           X                      X
+                                                                              pull down
+                   X               X                0        0          0          0              X
+                   X               X                1        1          0          0              X
+                   X          Above UVLO            0        1          0          1            Normal           Normal Operation
+                Above
+                              Above UVLO            1        0          1          0            Normal
+                UVLO
+              Falls below                                                                      Normal to
+                              Above UVLO           X         X          0          0
+                UVLO                                                                            Tripped    Normal-to-Tripped
+                Above          Falls below                                                     Normal to       Transition
+                                                   X         X          0          0
+                UVLO             UVLO                                                           Tripped
+                   X          Above UVLO         0 or 1    0 or 1       0          0            Tripped    When UVLO latch is
+                   X          Below UVLO           X         X          0          0            Tripped         tripped.
+                                                                                            Tripped, Reset
+     1              X         Above UVLO         0 to 1    0 to 1       0          0
+                                                                                             by INL & INH
+                                                                                            Tripped, Reset
+                    X         Above UVLO         1 to 0      1          0        0 to 1
+                                                                                            by INH Falling
+                  Below                                                                     Tripped, Reset
+                              Above UVLO            1      1 to 0       0          0
+                  UVLO                                                                      by INL Falling
+                  Above                                                                     Tripped, Reset Tripped to Normal
+                              Above UVLO            1      1 to 0    0 to 1        0                           Transition
+                  UVLO                                                                      by INL Falling
+                  Below                                                                     Tripped, Reset
+                              Above UVLO            0      0 to 1       0        0 to 1
+                  UVLO                                                                          by INL
+                  Below                                                                     Tripped, Reset
+                              Above UVLO         0 to 1      0          0          0
+                  UVLO                                                                          by INH
+                  Above                                                                     Tripped, Reset
+                              Above UVLO         0 to 1      0       0 to 1        0
+                  UVLO                                                                          by INH
+Note: x = Don’t Care.
+
+
+
+.
+
+
+
+
+MP1907 Rev. 1.2                                         www.MonolithicPower.com                                                     12
+4/16/2014           MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                   © 2014 MPS. All Rights Reserved.
+                                  MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+APPLICATION INFORMATION
+Reference Design Circuits                                            alternating signals from the PWM controller. The
+Half Bridge Motor Driver                                             input voltage can be up to 100V in this
+T In half-bridge converter topology, the                             application.
+MOSFETs are driven alternately with some dead
+time. Therefore, INH and INL are driven with
+
+
+
+                  Up to 100 V                                            +
+
+
+
+
+                                                                                                                      M
+
+                                             6                                   5
+                  EN                               EN                    SW
+                                             7                                   4
+                  INH                              INH                DRVH
+
+                  INL
+                                             8
+                                                   INL
+                                                          MP1907 BST             3
+
+                                             9     VSS                    NC     2
+                                                                                           DRVL
+
+                                            10                                   1
+                                                   DRVL                 VDD                   VDD
+                                                                                           4.5V to 18V
+                                                 DRVL
+                                                                               10µF
+
+
+
+                                         Figure 3—Half-Bridge Motor Driver
+
+
+
+
+MP1907 Rev. 1.2                                       www.MonolithicPower.com                                             13
+4/16/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.
+                                  MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+Active-Clamp Forward Converter                                        This topology lends itself well to run at duty
+                                                                      cycles exceeding 50%. For these reasons, the
+In active-clamp forward converter topology, the
+                                                                      input voltage may not be able to run at 100V for
+MOSFETs are driven alternately. The high-side
+                                                                      this application.
+MOSFET, along with capacitor Creset, is used to
+reset the power transformer in a lossless manner.
+
+
+         Up to 100 V                                      +
+
+                                                                                                                      Secondary
+                                                                                                                       Circuit
+                                                                                              +
+                                                                                                  Creset
+                                  6                               5
+         EN                             EN                 SW
+                                  7                               4
+         INH                            INH             DRVH
+
+         INL
+                                  8
+                                        INL
+                                               MP1907 BST         3
+
+                                  9     VSS                NC     2
+                                                                           DRVL
+
+                                 10                               1
+                                        DRVL              VDD                 VDD
+                                                                           9V to 18V
+                                      DRVL
+                                                                10µF
+
+
+
+                                      Figure 4—Active-clamp Forward Converter
+
+
+
+
+MP1907 Rev. 1.2                                       www.MonolithicPower.com                                                 14
+4/16/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.
+                                  MP1907―100V, 2.5A, HIGH FREQUENCY HALF-BRIDGE GATE DRIVER
+
+
+PACKAGE INFORMATION
+                                                     QFN10 (3 ×3 mm)
+                           2.90                                          0.30                1.45                  PIN 1 ID
+                           3.10                                          0.50                1.75                  SEE DETAIL A
+ PIN 1 ID
+ MARKING
+                                                                  0.18
+                                                                            10                                 1
+                                                                  0.30
+
+
+                                                    2.90                                                                2.25
+ PIN 1 ID                                                                                                               2.55
+                                                    3.10          0.50
+ INDEX AREA
+                                                                  BSC
+
+                                                                             6                                 5
+
+
+
+
+                       TOP VIEW                                                     BOTTOM VIEW
+
+
+
+                                                                         PIN 1 ID OPTION A          PIN 1 ID OPTION B
+                                                                         R0.20 TYP.                 R0.20 TYP.
+                                                         0.80
+                                                         1.00
+0.20 REF
+                                                  0.00
+                                                  0.05
+
+                      SIDE VIEW                                                         DETAIL A
+
+
+
+
+                                                                NOTE:
+                           2.90
+                                                                1) ALL DIMENSIONS ARE IN MILLIMETERS.
+        0.70               1.70                                 2) EXPOSED PADDLE SIZE DOES NOT INCLUDE MOLD FLASH.
+                                                                3) LEAD COPLANARITY SHALL BE 0.10 MILLIMETER MAX.
+ 0.25                                                           4) DRAWING CONFORMS TO JEDEC MO-229, VARIATION VEED-5.
+                                                                5) DRAWING IS NOT TO SCALE.
+
+
+                                                         2.50
+ 0.50
+
+
+
+
+           RECOMMENDED LAND PATTERN
+
+
+
+
+NOTICE: The information in this document is subject to change without notice. Please contact MPS for current specifications.
+Users should warrant and guarantee that third party Intellectual Property rights are not infringed upon when integrating MPS
+products into any application. MPS will not assume any legal responsibility for any said applications.
+
+MP1907 Rev. 1.2                                      www.MonolithicPower.com                                                      15
+4/16/2014         MPS Proprietary Information. Patent Protected. Unauthorized Photocopy and Duplication Prohibited.
+                                                 © 2014 MPS. All Rights Reserved.

@@ -57,6 +57,16 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define FAN_CTRL_Pin GPIO_PIN_2
+#define FAN_CTRL_GPIO_Port GPIOA
+#define EC11_A_Pin GPIO_PIN_3
+#define EC11_A_GPIO_Port GPIOA
+#define EC11_B_Pin GPIO_PIN_4
+#define EC11_B_GPIO_Port GPIOA
+#define EC11_D_Pin GPIO_PIN_5
+#define EC11_D_GPIO_Port GPIOA
+#define MP1907_EN_Pin GPIO_PIN_9
+#define MP1907_EN_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

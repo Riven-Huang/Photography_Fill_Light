@@ -1,0 +1,410 @@
+LinearL2TM                                         IXTH30N50L2                                  VDSS    = 500V
+Power MOSFET                                       IXTQ30N50L2                                  ID25    = 30A
+w/ Extended FBSOA                                  IXTT30N50L2                                  RDS(on)  215m
+
+                                                                                    D
+                                                                                    O D
+                                                                                                TO-268 (IXTT)
+N-Channel Enhancement Mode
+                                                                           RGi
+                                                                G O        ww                                      G
+
+                                                                                    O                                  S
+                                                                                    S                                      D (Tab)
+
+                                                                                                TO-3P (IXTQ)
+Symbol       Test Conditions                              Maximum Ratings
+VDSS         TJ = 25C to 150C                                    500                     V
+VDGR         TJ = 25C to 150C, RGS = 1M                         500                     V
+                                                                                                     G
+VGSS         Continuous                                            20                     V          D
+VGSM         Transient                                             30                     V              S
+                                                                                                                           D (Tab)
+ID25         TC = 25C                                                30                   A
+IDM          TC = 25C, Pulse Width Limited by TJM                    60                   A    TO-247 (IXTH)
+IA           TC = 25C                                                30                   A
+EAS          TC = 25C                                              1.5                     J
+PD           TC = 25C                                             400                     W
+                                                                                                       G
+TJ                                                      -55 ... +150                      C              D               D (Tab)
+                                                                                                               S
+TJM                                                                150                    C
+Tstg                                                    -55 ... +150                      C   G = Gate           D   = Drain
+TL           Maximum Lead Temperature for Soldering                300                     °C   S = Source         Tab = Drain
+TSOLD        Plastic Body for 10s                                  260                     °C
+Md           Mounting Torque (TO-247&TO-3P)                   1.13 / 10            Nm/lb.in
+                                                                                                Features
+Weight       TO-268                                                  4.0                    g
+             TO-3P                                                   5.5                    g   
+             TO-247                                                  6.0                    g     Designed for Linear Operation
+                                                                                                
+                                                                                                  International Standard Packages
+                                                                                                
+                                                                                                  Avalanche Rated
+                                                                                                
+                                                                                                  Guaranteed FBSOA at 75C
+Symbol       Test Conditions                            Characteristic Values
+(TJ = 25C Unless Otherwise Specified)                  Min.    Typ.    Max.                    Advantages
+
+BVDSS        VGS = 0V, ID = 250μA                       500                                V    
+                                                                                                  Easy to Mount
+                                                                                                
+VGS(th)      VDS = VGS, ID = 250μA                      2.5                        4.5     V      Space Savings
+                                                                                                
+                                                                                                  High Power Density
+IGSS         VGS = 20V, VDS = 0V                                         100   nA
+                                                                                                Applications
+IDSS         VDS = VDSS, VGS = 0V                                                 50       A
+                                           TJ = 125C                            300       A   
+                                                                                                  Solid State Circuit Breakers
+RDS(on)      VGS = 10V, ID = 0.5 • ID25, Note 1                                  215 m         
+                                                                                                  Soft Start Controls
+                                                                                                
+                                                                                                  Linear Amplifiers
+                                                                                                
+                                                                                                  Programmable Loads
+                                                                                                
+                                                                                                  Current Regulators
+
+
+
+© 2014 IXYS CORPORATION, All Rights Reserved                                                                                  DS99957B (02/14)
+                                                                                                                       IXTH30N50L2 IXTQ30N50L2
+                                                                                                                                   IXTT30N50L2
+Symbol        Test Conditions                                                        Characteristic Values                           TO-3P Outline
+(TJ = 25°C, Unless Otherwise Specified)                                              Min.    Typ.      Max.
+gfs                   VDS = 10V, ID = 0.5 • ID25, Note 1                             9              12         15       S
+Ciss                                                                                            8100                  pF
+Coss                  VGS = 0V, VDS = 25V, f = 1MHz                                               530                 pF
+Crss                                                                                              115                 pF
+RGi                   Integrated Gate Input Resistor                                               3.5                 
+td(on)                                                                                             35                 ns
+                      Resistive Switching Times
+tr                                                                                                117                 ns
+                      VGS = 10V, VDS = 0.5 • VDSS, ID = 0.5 • ID25
+td(off)                                                                                            94                 ns
+                      RG = 0 (External)
+tf                                                                                                 40                 ns
+Qg(on)                                                                                            240                 nC
+Qgs                   VGS = 10V, VDS = 0.5 • VDSS, ID = 0.5 • ID25                                 58                 nC
+Qgd                                                                                               135                 nC
+RthJC                                                                                                        0.31 °C/W
+RthCS                 (TO-247&TO-3P)                                                             0.25              °C/W
+
+
+Safe Operating Area Specification
+                                                                                    Characteristic Values
+Symbol                Test Conditions                                                Min.    Typ.     Max.
+SOA                   VDS = 400V, ID = 0.5A, TC = 75°C, Tp = 2s                       200                              W
+
+Source-Drain Diode
+                                                                                                                                      TO-247 Outline
+Symbol       Test Conditions                                                             Characteristic Values
+(TJ = 25C, Unless Otherwise Specified)                                                  Min.   Typ.      Max.
+IS                    VGS = 0V                                                                                 30       A
+ISM                   Repetitive, Pulse Width Limited by TJM                                                  120       A                                           P
+                                                                                                                                                    1   2   3
+
+VSD                   IF = IS, VGS = 0V, Note 1                                                                1.5      V
+trr                   IF = IS, -di/dt = 100A/s,                                                   500                ns
+                      VR = 100V, VGS = 0V
+
+
+Note 1: Pulse test, t  300s, duty cycle, d 2%.                                                                                                              e
+
+                                                                                                                                          Terminals: 1 - Gate         2 - Drain
+                                                                                                                                                     3 - Source
+
+      TO-268 Outline                                                                                                                       Dim.  Millimeter            Inches
+                                                                                                                                                Min. Max.            Min. Max.
+                                                                                                                                            A    4.7     5.3         .185 .209
+                                                                                                                                            A1   2.2    2.54         .087 .102
+                                                                                                                                            A2   2.2     2.6         .059 .098
+                                                                                                                                            b    1.0     1.4         .040 .055
+                                                                                                                                            b1  1.65    2.13         .065 .084
+                                                                                                                                            b2  2.87    3.12         .113 .123
+                                                                                                                                            C      .4      .8        .016 .031
+                                                                                                                                            D  20.80 21.46           .819 .845
+                                                                                                                                            E  15.75 16.26           .610 .640
+                                                                                                                                            e   5.20    5.72        0.205 0.225
+                                                                                                                                            L  19.81 20.32           .780 .800
+          Terminals: 1 - Gate      2,4 - Drain                                                                                              L1          4.50                .177
+                     3 - Source                                                                                                             P 3.55     3.65         .140 .144
+                                                                                                                                            Q   5.89    6.40        0.232 0.252
+                                                                                                                                            R   4.32    5.49         .170 .216
+                                                                                                                                            S   6.15 BSC              242 BSC
+IXYS Reserves the Right to Change Limits, Test Conditions, and Dimensions.
+IXYS MOSFETs and IGBTs are covered            4,835,592   4,931,844   5,049,961   5,237,481   6,162,665       6,404,065 B1   6,683,344    6,727,585    7,005,734 B2       7,157,338B2
+by one or more of the following U.S. patents: 4,860,072   5,017,508   5,063,307   5,381,025   6,259,123 B1    6,534,343      6,710,405 B2 6,759,692    7,063,975 B2
+                                              4,881,106   5,034,796   5,187,117   5,486,715   6,306,728 B1    6,583,505      6,710,463    6,771,478 B2 7,071,537
+                                                                                                                                                                   IXTH30N50L2 IXTQ30N50L2
+                                                                                                                                                                               IXTT30N50L2
+
+                                          Fig. 1. Output Characteristics @ TJ = 25ºC                                                                      Fig. 2. Extended Output Characteristics @ TJ = 25ºC
+                        30                                                                                                                    80
+                                                                           VGS = 20V                                                                                                   VGS = 20V
+                                                                                12V                                                           70                                            14V
+                                                                                10V                                                                                                         12V
+                        24
+                                                                                9V
+                                                                                                                                              60
+
+                                                                                                                                                                                                   10V
+
+
+
+
+                                                                                                                       I D - Amperes
+ I D - Amperes
+
+
+
+
+                                                                                                                                              50
+                        18
+                                                                                             8V
+                                                                                                                                              40
+                                                                                                                                                                                                   9V
+                        12                                                                   7V                                               30
+                                                                                                                                                                                                   8V
+
+                                                                                                                                              20
+                         6                                                                                                                                                                         7V
+                                                                                             6V
+                                                                                                                                              10
+                                                                                                                                                                                                   6V
+                                                                                             5V
+                         0                                                                                                                     0
+                              0   0.5        1   1.5        2   2.5    3      3.5   4        4.5   5        5.5   6                                 0              5         10           15                 20         25         30
+                                                                  VDS - Volts                                                                                                      VDS - Volts
+
+
+                                                                                                                                                             Fig. 4. RDS(on) Normalized to ID = 15A Value vs.
+                                         Fig. 3. Output Characteristics @ TJ = 125ºC                                                                                      Junction Temperature
+                        30                                                                                                                    2.8
+                                                                      VGS = 20V
+                                                                                                                                                          VGS = 10V
+                                                                           12V
+                                                                           10V                                                                2.4
+                        24
+                                                                           9V
+                                                                                                                       RDS(on) - Normalized
+
+
+
+
+                                                                                        8V                                                    2.0
+      I D - Amperes
+
+
+
+
+                        18                                                                                                                                                                      I D = 30A
+
+                                                                                                                                              1.6                                                                  I D = 15A
+                                                                                        7V
+                        12
+                                                                                                                                              1.2
+                                                                                        6V
+                         6
+                                                                                                                                              0.8
+                                                                                        5V
+
+                         0                                                                                                                    0.4
+                              0          2             4          6           8         10             12         14                                -50      -25         0        25      50            75        100        125   150
+                                                                VDS - Volts                                                                                                   TJ - Degrees Centigrade
+
+
+                                        Fig. 5. RDS(on) Normalized to ID = 15A Value vs.                                                                               Fig. 6. Maximum Drain Current vs.
+                                                          Drain Current                                                                                                         Case Temperature
+                        2.8                                                                                                                   35
+
+                                  VGS = 10V
+                                                                                                                                              30
+                        2.4                                                TJ = 125ºC
+                                                                                                                                              25
+ RDS(on) - Normalized
+
+
+
+
+                                                                                                                           I D - Amperes
+
+
+
+
+                        2.0
+                                                                                                                                              20
+
+
+                                                                                                                                              15
+                        1.6
+
+                                                                                                                                              10
+                                                                                         TJ = 25ºC
+                        1.2
+                                                                                                                                               5
+
+
+                        0.8                                                                                                                    0
+                              0         10             20        30           40        50           60           70                                -50      -25         0        25       50           75        100        125   150
+                                                                 I D - Amperes                                                                                               TC - Degrees Centigrade
+
+
+
+
+© 2014 IXYS CORPORATION, All Rights Reserved
+                                                                                                                                                                                 IXTH30N50L2 IXTQ30N50L2
+                                                                                                                                                                                             IXTT30N50L2
+
+                                                                   Fig. 7. Input Admittance                                                                                              Fig. 8. Transconductance
+                                 50                                                                                                                        30
+
+                                                                                                                                                           27                                                               TJ = - 40ºC
+
+                                 40                                                                                                                        24
+
+                                                                                                                                                           21                                                                     25ºC
+                                                                                          TJ = 125ºC
+
+
+
+
+                                                                                                                                     g f s - Siemens
+ I D - Amperes
+
+
+
+
+                                 30                                                              25ºC                                                      18
+                                                                                               - 40ºC                                                                                                                       125ºC
+                                                                                                                                                           15
+
+                                 20                                                                                                                        12
+
+                                                                                                                                                           9
+
+                                 10                                                                                                                        6
+
+                                                                                                                                                           3
+
+                                  0                                                                                                                        0
+                                      3.5         4.5              5.5              6.5           7.5              8.5        9.5                               0      5         10      15      20      25     30    35      40          45   50
+                                                                              VGS - Volts                                                                                                          I D - Amperes
+
+
+
+                                                Fig. 9. Forward Voltage Drop of Intrinsic Diode                                                                                                Fig. 10. Gate Charge
+                                 90                                                                                                                        16
+
+                                                                                                                                                                    VDS = 250V
+                                 80                                                                                                                        14
+                                                                                                                                                                    I D = 15A
+                                 70                                                                                                                                 I G = 10mA
+                                                                                                                                                           12
+
+                                 60
+ I S - Amperes
+
+
+
+
+                                                                                                                                                           10
+                                                                                                                                             VGS - Volts
+
+
+
+
+                                 50
+                                                                                                                                                            8
+                                 40
+
+                                                                     TJ = 125ºC                                                                             6
+                                 30
+                                                                                                        TJ = 25ºC                                           4
+                                 20
+
+                                 10                                                                                                                         2
+
+                                  0                                                                                                                         0
+                                      0.4       0.5          0.6              0.7         0.8           0.9         1.0       1.1                               0          50           100        150        200     250           300        350
+                                                                         VSD - Volts                                                                                                          QG - NanoCoulombs
+
+
+
+                                                                   Fig. 11. Capacitance                                                                                Fig. 12. Maximum Transient Thermal Impedance
+           100,000                                                                                                                                         1
+
+                                                 f = 1 MHz
+      Capacitance - PicoFarads
+
+
+
+
+                                                                                                     Ciss
+                       10,000
+                                                                                                                                    Z (th)JC - ºC / W
+
+
+
+
+                                 1,000                                                               Coss                                                0.1
+
+
+
+
+                                  100
+                                                                                                     Crss
+
+
+
+                                   10                                                                                                                   0.01
+                                            0    5       10              15          20         25            30         35   40                           0.0001               0.001           0.01           0.1            1                10
+                                                                               VDS - Volts                                                                                                    Pulse Width - Seconds
+
+IXYS Reserves the Right to Change Limits, Test Conditions, and Dimensions.
+                                                                                                                            IXTH30N50L2 IXTQ30N50L2
+                                                                                                                                        IXTT30N50L2
+                                   Fig. 13. Forward-Bias Safe Operating Area                                               Fig. 14. Forward-Bias Safe Operating Area
+                                                 @ TC = 25ºC                                                                             @ TC = 75ºC
+             100                                                                                  100
+
+                            RDS(on) Limit                                                                           RDS(on) Limit
+
+
+                                                                           25µs
+
+                                                                           100µs                                                                                            25µs
+
+                 10                                                                                       10                                                                100µs
+ I D - Amperes
+
+
+
+
+                                                                                          I D - Amperes
+                                                                           1ms
+
+                                                                                                                                                                            1ms
+
+                                                                           10ms
+                                                                                                                                                                            10ms
+                  1                                                                                        1
+
+                                                                           100ms
+                                                                   DC                                                                                                       100ms
+                                                                                                                                                            DC
+                             TJ = 150ºC                                                                              TJ = 150ºC
+                             Single Pulse                                                                            Single Pulse
+
+                 0.1                                                                                  0.1
+                       10                            100                           1000                        10                             100                                     1000
+                                                  VDS - Volts                                                                             VDS - Volts
+
+
+
+
+© 2014 IXYS CORPORATION, All Rights Reserved                                                                                                                     IXYS REF: T_30N50L2(7R)4-23-08-A
+Disclaimer Notice - Information furnished is believed to be accurate and reliable. However, users should independently
+evaluate the suitability of and test each product selected for their own applications. Littelfuse products are not designed for,
+and may not be used in, all applications. Read complete Disclaimer Notice at www.littelfuse.com/disclaimer-electronics.
