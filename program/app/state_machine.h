@@ -16,12 +16,16 @@ extern volatile SystemState_t sys_state;
 extern volatile uint32_t vout_target_mv;
 extern volatile uint32_t vout_ctrl_ref_mv;
 extern volatile int32_t vout_ctrl_err_mv;
+extern volatile uint32_t vds_target_req_mv;
+extern volatile uint32_t vds_target_mv;
+extern volatile uint32_t vds_ctrl_ref_mv;
+extern volatile uint32_t vout_soft_max_mv;
 extern volatile uint32_t vout_abs_max_mv;
 extern volatile uint8_t vout_ovp_active;
 extern volatile uint16_t light_dac_target_permille;
 extern drv_pid_pi_t vout_pi;
 
-/* 功率级状态机入口；调用前必须已经完成硬件初始化和ADC数据更新。 */
+/* 状态机入口 / State machine tick；调用前必须已经完成外设初始化并拿到一组新的 ADC 工程量。 */
 void State_M(void);
 
 #endif // _STATE_MACHINE_

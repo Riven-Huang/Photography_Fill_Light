@@ -1,4 +1,5 @@
 # Photography Fill Light Current Operation Manual
+
 更新时间: 2026-03-21
 
 ## 1. 文档目的
@@ -68,7 +69,9 @@
 - 亮度 DAC 默认占空比已改为 `0.05`，即 `50 permille`。
 - 状态机已经有 `SYS_STANDBY -> SYS_SOFT_START -> SYS_RUNNING`。
 - 风扇在 `SOFT_START` 和 `RUNNING` 状态下已开启。
-- 当前 Boost 闭环仍偏向“电压目标”，还没有真正完成“最小压差控制”。
+- 当前 Boost 已切到“固定余量版本”。
+- 当前实现是用 `vds_mv_lpf` 作为 `Q5 drain-to-gnd` 余量反馈，默认目标为 `1000mV`。
+- `vout_ctrl_ref_mv` 现在是随 `Vled_est + headroom_target` 实时变化的动态母线目标，便于在 debug 里直接看。
 
 ## 5. 你接下来应该一项一项做的事情
 
@@ -175,6 +178,12 @@
 `Vdrain_to_gnd_target`
 
 ## Step 5. 先做“固定余量版本”，不要一步上最复杂
+
+当前状态:
+
+- 这一步已经落地了第一版代码。
+- 软启动阶段拉升的是 `vds_ctrl_ref_mv`，运行阶段维持 `vds_target_mv = 1000mV`。
+- 后续工作重点不再是“有没有固定余量控制”，而是“1000mV 在高亮和热机下是否仍然够用，需要靠实测确认”。
 
 目的:
 先把控制方向做对，再做精细化。
