@@ -14,9 +14,8 @@
   - [4.4 设计亮点](#44-设计亮点)
 - [5. 软件设计](#5-软件设计)
 - [6. 快速开始](#6-快速开始)
-- [7. 项目结构](#7-项目结构)
-- [8. 可扩展方向](#8-可扩展方向)
-- [9. 许可证说明](#9-许可证说明)
+- [7. 可扩展方向](#7-可扩展方向)
+- [8. 许可证说明](#8-许可证说明)
 
 ---
 
@@ -55,6 +54,29 @@ flowchart LR
 - MCU 负责目标值、软启动、保护和人机交互
 
 每一层职责明确，出了问题容易定位。
+
+### 项目结构
+
+```text
+.
+├─ circurit/                 原理图、Gerber
+├─ datasheet/                器件规格书、网表
+├─ docs/                     设计手册、策略文档、图片资源
+├─ hot_design/               热设计估算脚本与结果
+├─ program/
+│  ├─ Core/                  CubeMX 初始化代码
+│  ├─ app/                   状态机、EC11、PI、控制逻辑
+│  ├─ Drivers/               HAL / CMSIS
+│  └─ MDK-ARM/               Keil 工程与编译输出
+└─ simulation/               仿真模型
+```
+
+建议优先看：
+
+- `docs/CURRENT_OPERATION_MANUAL.md`
+- `docs/DYNAMIC_HEADROOM_STRATEGY.md`
+- `hot_design/thermal_report.md`
+- `program/app/state_machine.c`
 
 ---
 
@@ -261,32 +283,7 @@ Vds_keepalive_target_mv = 850 - 0.65 × light_dac_target_permille
 
 ---
 
-## 7. 项目结构
-
-```text
-.
-├─ circurit/                 原理图、Gerber
-├─ datasheet/                器件规格书、网表
-├─ docs/                     设计手册、策略文档、图片资源
-├─ hot_design/               热设计估算脚本与结果
-├─ program/
-│  ├─ Core/                  CubeMX 初始化代码
-│  ├─ app/                   状态机、EC11、PI、控制逻辑
-│  ├─ Drivers/               HAL / CMSIS
-│  └─ MDK-ARM/               Keil 工程与编译输出
-└─ simulation/               仿真模型
-```
-
-建议优先看：
-
-- `docs/CURRENT_OPERATION_MANUAL.md`
-- `docs/DYNAMIC_HEADROOM_STRATEGY.md`
-- `hot_design/thermal_report.md`
-- `program/app/state_machine.c`
-
----
-
-## 8. 可扩展方向
+## 7. 可扩展方向
 
 - 加双色温通道
 - 加无线控制或上位机参数配置
@@ -297,7 +294,7 @@ Vds_keepalive_target_mv = 850 - 0.65 × light_dac_target_permille
 
 ---
 
-## 9. 许可证说明
+## 8. 许可证说明
 
 本项目基于 **GNU General Public License v3.0 (GPL 3.0)** 开源许可协议发布。
 
