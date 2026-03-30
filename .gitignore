@@ -1,1 +1,12 @@
 ~$*.docx
+
+# Keil user-specific files
+*.uvguix.*
+*.bak
+
+# Sisyphus internal
+.sisyphus/
+
+# OS temp
+.DS_Store
+Thumbs.db

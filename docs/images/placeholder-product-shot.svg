@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1120" height="560" rx="28" fill="#111827" stroke="#334155" stroke-width="4"/>
+  <circle cx="270" cy="360" r="96" fill="#f59e0b" opacity="0.85"/>
+  <rect x="430" y="240" width="420" height="180" rx="24" fill="#1f2937" stroke="#475569" stroke-width="3"/>
+  <rect x="880" y="255" width="100" height="150" rx="16" fill="#1f2937" stroke="#475569" stroke-width="3"/>
+  <text x="640" y="150" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="44" text-anchor="middle">PRODUCT PHOTO PLACEHOLDER</text>
+  <text x="640" y="520" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="28" text-anchor="middle">Replace with real hardware photo</text>
+  <text x="640" y="565" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="22" text-anchor="middle">Suggested path: docs/images/product-photo.jpg</text>
+</svg>

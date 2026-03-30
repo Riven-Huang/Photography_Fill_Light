@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="90" y="90" width="1100" height="540" rx="28" fill="#0b1220" stroke="#2dd4bf" stroke-width="4"/>
+  <path d="M180 470 C260 260, 340 260, 420 470 S580 680, 660 470 820 260, 900 470 1060 680, 1140 420" fill="none" stroke="#2dd4bf" stroke-width="8"/>
+  <text x="640" y="170" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif" font-size="44" text-anchor="middle">RUNTIME DEMO PLACEHOLDER</text>
+  <text x="640" y="540" fill="#a7f3d0" font-family="Segoe UI, Arial, sans-serif" font-size="28" text-anchor="middle">Replace with power-on photo, waveform, or brightness test image</text>
+  <text x="640" y="585" fill="#99f6e4" font-family="Segoe UI, Arial, sans-serif" font-size="22" text-anchor="middle">Suggested path: docs/images/runtime-demo.jpg</text>
+</svg>

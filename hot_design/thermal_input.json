@@ -1,0 +1,30 @@
+{
+  "project_name": "Photography Fill Light",
+  "version": "placeholder-v1",
+  "todo_notes": [
+    "TODO: Replace full_power_current_a with measured LED current.",
+    "TODO: Replace led_forward_voltage_v with measured COB voltage at full power.",
+    "TODO: Replace led_optical_efficiency with real LED datasheet or integrating sphere result.",
+    "TODO: Replace led_r_jc_c_per_w and led_r_cs_c_per_w with the real COB datasheet and TIM stack value.",
+    "TODO: Replace q5_drain_to_gnd_target_v with measured steady-state value from current firmware.",
+    "TODO: Replace boost_efficiency with measured board efficiency.",
+    "TODO: Replace ambient_temp_list_c with the real product target environment."
+  ],
+  "assumptions": {
+    "full_power_current_a": 2.0,
+    "led_forward_voltage_v": 36.42,
+    "sense_resistor_ohm": 0.1,
+    "q5_drain_to_gnd_target_v": 0.50,
+    "led_optical_efficiency": 0.25,
+    "boost_efficiency": 0.92,
+    "aux_power_w": 1.50,
+    "led_r_jc_c_per_w": 0.60,
+    "led_r_cs_c_per_w": 0.20,
+    "q5_r_jc_c_per_w": 0.30,
+    "q5_r_cs_c_per_w": 0.40,
+    "led_tj_target_c": 100.0,
+    "q5_tj_target_c": 110.0,
+    "ambient_temp_list_c": [25, 35, 40],
+    "heatsink_r_sa_candidates_c_per_w": [1.00, 0.70, 0.50, 0.35, 0.25]
+  }
+}

@@ -1,0 +1,6 @@
+component,heat_w
+COB_LED_heat,54.63
+Q5_linear_loss,0.60
+Boost_loss,6.39
+Aux_power,1.50
+Total_internal_heat,63.12
