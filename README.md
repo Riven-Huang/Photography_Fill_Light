@@ -1,34 +1,178 @@
 # Photography Fill Light
 
-> 开源单色温 COB 摄影补光灯控制工程  
-> Open-Source Single-CCT COB Fill Light Project
+> 面向 `60W-80W` 单色温 COB 的低成本摄影补光灯控制板  
+> `STM32F030F4P6TR` + `Boost + 模拟恒流` + `EC11`
 
-单色温 COB 摄影补光灯控制开源项目，基于 `STM32F030F4P6TR`，当前本地文件对应的是一个面向 `60W-80W` 功率段的工程样机。
+这是一个强调“低成本、可复刻、工程逻辑清楚”的摄影补光灯开源项目。  
+当前版本不是成品灯，而是一套已经跑通核心链路的工程样机: `EC11` 交互、软启动、Boost 母线控制、风扇联动、基础保护框架和仿真验证都已经具备，适合继续往可复刻开源项目推进。
 
-## 目录
+之所以选择线性整流，目的主要是：
 
-- [1. 项目简介](#1-项目简介)
-- [2. MPS 大学计划](#2-mps-大学计划)
-- [3. 项目速览](#3-项目速览)
-- [4. 硬件设计](#4-硬件设计)
-  - [4.4 设计亮点](#44-设计亮点)
-- [5. 软件设计](#5-软件设计)
-- [6. 快速开始](#6-快速开始)
-- [7. 可扩展方向](#7-可扩展方向)
-- [8. 许可证说明](#8-许可证说明)
+1.防止电流控制的boost右半平面极点，降低控制难度
 
----
+2.防频闪
 
-## 1. 项目简介
+3.为未来的共阳极COB灯珠提供方案验证，方便未来改成双色温无极调节
 
-这是一个面向摄影补光灯的控制板项目，不追求"参数堆料"，而是优先解决下面这些实际问题：
+## 1. 项目速览
 
-- 亮度调节要稳定
-- 相机拍摄时不能出现明显闪烁
-- 功率链路和控制链路清晰，便于调试和复刻
-- 关键风险点可测量
+| 项目    | 当前版本                           |
+| ----- | ------------------------------ |
+| 项目名称  | `Photography Fill Light`       |
+| 目标功率段 | `60W-80W`                      |
+| 光源类型  | 单色温 `COB LED`                  |
+| 主控    | `STM32F030F4P6TR`              |
+| 调光方式  | `EC11` 编码器旋钮 + 按压开关            |
+| 功率架构  | `Boost + 模拟恒流`                 |
+| 电流参考  | `TIM3 PWM + RC` 伪 DAC          |
+| 固件架构  | 裸机状态机 + `ADC + DMA + PWM + PI` |
+| 项目定位  | 优先把亮度稳定、低闪烁、易调试、低成本这几件事做好      |
 
-当前方案采用分层控制架构：
+## 2. 实物图
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/images/实物图1.jpg" alt="工程样机实拍" width="460">
+    </td>
+    <td align="center">
+      <img src="docs/images/实物图2.jpg" alt="侧视结构图" width="460">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">工程样机实拍</td>
+    <td align="center">侧视 / 结构视角</td>
+  </tr>
+</table>
+
+从现阶段样机可以看到，这个项目的重点不是先把外观做满，而是先把控制板、电源链路、散热路径和调光逻辑打通。对开源项目来说，这样反而更有价值: 电路结构真实、问题边界清楚、后续更容易被别人接着做。
+
+## 3. 这个方案为什么值得开源
+
+- 不是“MCU 直接低频 PWM 斩波 LED”，而是 `Boost + 模拟恒流` 分层控制，更适合视频和拍照场景的连续光输出。
+- 控制链路和功率链路是拆开的，出问题更容易定位，适合个人开发者复刻和继续调试。
+- 关键量都尽量做成“可测量”的工程变量，比如 `VOUT`、`Q5 drain-to-gnd`、动态余量目标、风扇联动状态。
+- 样机已经配套了设计手册、动态余量说明、热设计估算和仿真模型，不只是丢一份原理图。
+
+## 4. 低成本亮点
+
+这套设计最有意思的地方，不是单纯把器件换便宜，而是用架构把成本压下去。
+
+- `TIM3_CH2 + PWM + RC` 直接生成电流参考，不额外上 DAC 芯片，少一颗器件、少一段调试链路。
+- 主控选 `STM32F030F4P6TR`，并坚持整数控制，避免为了浮点计算上更高档 MCU。
+- `Boost` 负责慢速给母线“补刚好够用的电压”，模拟恒流级负责快速稳流，不需要一开始就上更复杂的大闭环方案。
+- `EC11 + 裸机状态机` 就能完成亮度调节、开关机和基本控制节拍，结构简单，适合量产前样机和开源复刻。
+
+按 [`docs/补光灯设计手册.pdf`](docs/补光灯设计手册.pdf) 在 `2026-03-22` 的当前估算，成本拆分如下:
+
+| 项目              | 估算成本      |
+| --------------- | --------- |
+| 核心电子 BOM 小计     | `13.71 元` |
+| 灯珠、结构与散热 BOM 小计 | `25.00 元` |
+
+这个拆分很能说明问题: 真正值得开源复刻的“控制板部分”成本并不高，整机大头反而在供电、附件和结构件上。  
+换句话说，这个项目的设计亮点之一，就是把最核心的控制能力尽量压进了低成本电子 BOM 里。
+
+## 5. 关键设计亮点
+
+### 5.1 `Boost + 模拟恒流` 的分层控制
+
+当前方案不是直接用 MCU 去粗暴切 LED，而是:
+
+1. `MP1907 + 外部 MOS + 33uH` 构成 `Boost`
+2. `TLV2372 + Q5 + 0.1R` 构成模拟恒流级
+3. `TIM3_CH2` 通过 `PWM + RC` 生成电流参考
+
+这样做的核心收益是:
+
+- LED 看到的是更接近连续的电流
+- 视频拍摄更容易避开明显闪烁
+- 数字控制和模拟稳流各管一层，调试难度更低
+
+### 5.2 动态余量控制
+
+这个项目不是让 `Q5` 长期硬吃大压差，而是让 `Boost` 只给线性恒流级留下“最小可调余量”。
+
+关键关系:
+
+```text
+Vsense = Iled x 0.1 ohm
+Vds_true = Vdrain_gnd - Vsense
+```
+
+也就是说，真正决定 `Q5` 是否还在可调区的，不是单独的 `Vdrain_gnd`，而是 `Vds_true`。
+
+当前文档里已经给出了动态余量思路:
+
+- 低亮度时，多留一点余量，先保稳定
+- 高亮度时，把 `Q5` 尽量压到接近全开，减少线性区损耗和发热
+- 但不会把 `Q5` 直接硬顶死，避免模拟恒流环失去调节权
+
+这部分可继续参考:
+
+- [`docs/CURRENT_OPERATION_MANUAL.md`](docs/CURRENT_OPERATION_MANUAL.md)
+- [`docs/DYNAMIC_HEADROOM_STRATEGY.md`](docs/DYNAMIC_HEADROOM_STRATEGY.md)
+
+### 5.3 整数控制优化
+
+`STM32F030F4P6TR` 没有硬件 FPU，所以当前固件坚持整数实现，避免软件浮点带来的资源浪费。
+
+- `ADC + DMA` 负责采样
+- `PI` 控制器采用定点实现
+- 亮度、电压和调试量统一按工程量输出
+
+这让项目在低成本 MCU 上依然能把控制节拍、采样链路和交互逻辑跑顺。
+
+## 6. 运行验证
+
+具体验证视频可以看小红书：自制补光灯小test http://xhslink.com/o/AVei6cEGQPr 复制后打开【小红书】查看笔记！
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/images/热成像图.jpg" alt="热成像图" width="420">
+    </td>
+    <td align="center">
+      <img src="docs/images/仿真运行图.png" alt="仿真运行图" width="420">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">热成像记录</td>
+    <td align="center">仿真运行截图</td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="docs/images/运行图.jpg" alt="样机运行图" width="300">
+</p>
+<p align="center">样机运行图</p>
+
+- 当前已经有热成像记录，截图中最高温约 `49.2°C`，但这只是当时工况下的阶段性记录，不等于最终热设计结论。
+- [`hot_design/thermal_report.md`](hot_design/thermal_report.md) 目前仍是估算版，不是最终热签核。
+- 现有热设计估算建议: 如果继续维持 `60W-80W` 功率级，主散热器建议做到 **`<= 0.35 C/W` 且有强制风冷**。
+- 仿真模型已用于辅助分析启动过程、余量变化和线性恒流级行为，便于后续继续迭代控制参数。
+
+## 7. 当前已经实现的功能
+
+- 单色温亮度调节
+- `EC11` 旋钮调光，长按开关机
+- `TIM3 PWM + RC` 伪 DAC 输出
+- `ADC + DMA` 采样 `VOUT / VDS`
+- 裸机状态机: `STANDBY / SOFT_START / RUNNING / FAULT`
+- Boost 动态母线目标控制
+- 过压保护框架
+- 风扇联动控制
+
+## 8. 当前版本的边界
+
+作为一个适合继续开源迭代的工程样机，当前版本也有明确边界:
+
+- 还不是最终整机形态，机械结构、外壳和量产散热还可以继续打磨
+- 过流、过温、开路等保护逻辑还值得继续补齐
+- 效率、照度、噪声和长时间热稳定性还需要更多实测数据
+- 热设计文档目前是估算版，后续应逐步替换成实测数据
+
+## 9. 硬件架构
 
 ```mermaid
 flowchart LR
@@ -47,15 +191,13 @@ flowchart LR
     MCU --> FAN[FAN_CTRL]
 ```
 
-这个架构的核心：
+这个架构里每一层的分工很明确:
 
 - `Boost` 负责母线电压
-- 模拟恒流负责 LED 电流
+- 模拟恒流级负责 LED 电流
 - MCU 负责目标值、软启动、保护和人机交互
 
-每一层职责明确，出了问题容易定位。
-
-### 项目结构
+## 10. 仓库结构
 
 ```text
 .
@@ -71,247 +213,57 @@ flowchart LR
 └─ simulation/               仿真模型
 ```
 
-建议优先看：
+建议优先看:
 
-- `docs/CURRENT_OPERATION_MANUAL.md`
-- `docs/DYNAMIC_HEADROOM_STRATEGY.md`
-- `hot_design/thermal_report.md`
-- `program/app/state_machine.c`
+- [`docs/补光灯设计手册.pdf`](docs/补光灯设计手册.pdf)
+- [`docs/CURRENT_OPERATION_MANUAL.md`](docs/CURRENT_OPERATION_MANUAL.md)
+- [`docs/DYNAMIC_HEADROOM_STRATEGY.md`](docs/DYNAMIC_HEADROOM_STRATEGY.md)
+- [`hot_design/thermal_report.md`](hot_design/thermal_report.md)
+- [`program/app/state_machine.c`](program/app/state_machine.c)
 
----
+## 11. 快速开始
 
-## 2. MPS 大学计划
+### 11.1 开发环境
 
-### 2.1 申请说明
+- IDE: `Keil MDK-ARM`
+- 工程文件: `program/MDK-ARM/Fill_Light.uvprojx`
+- CubeMX 工程: `program/Fill_Light.ioc`
 
-本项目使用 MPS 器件搭建，MPS 中国大学计划面向高校教学、科研与竞赛项目，适合本项目所用电源管理相关器件申请。若需要 `MP4420`、`MP1907`、`MP20051` 等样片，可通过对应入口申请。
-
-- 在校大学生：使用 [MPS 大学计划](https://www.monolithicpower.cn/cn/support/mps-cn-university.html)
-- 非在校个人开发者：使用 [MPSNOW](https://www.monolithicpower.cn/cn/support/mps-now.html)
-- 申请备注：`Photography-Fill-Light`
-
-### 2.2 二维码入口
-
-<img src="docs/images/mps-university-qr.png" title="" alt="MPS University Program QR" width="287">{width=330}
-
-### 2.3 本项目使用的 MPS 器件
-
-| 模块        | 器件型号         | 说明            |
-| --------- | ------------ | ------------- |
-| 12V/5V 电源 | `MP4420`     | 降压芯片，给运放和驱动供电 |
-| 3.3V 电源   | `MP20051`    | LDO，MCU 供电    |
-| Boost 驱动  | `MP1907GQ-Z` | 驱动外部 MOS 和电感  |
-| 风扇开关      | `AO3400A`    | MOSFET，低边风扇驱动 |
-
----
-
-## 3. 项目速览
-
-### 3.1 核心配置
-
-当然，如果你有兴趣自己设计机械散热，本设计的板子跑个100多W是没什么问题的。
-
-| 项目项   | 当前版本                               |
-| ----- | ---------------------------------- |
-| 项目名称  | `Photography Fill Light`           |
-| MCU   | `STM32F030F4P6TR`                  |
-| 输入供电  | 宽压 `VIN` 输入，板上生成 `12V / 5V / 3.3V` |
-| 光源类型  | 单色温 `COB LED`                      |
-| 调光方式  | `EC11` 编码器旋钮 + 按压开关                |
-| 功率架构  | `Boost + 模拟恒流`                     |
-| 目标功率段 | `60W-80W`                          |
-| 固件架构  | 裸机状态机 + `ADC + DMA + PWM + PI`     |
-
-### 3.2 功能特性
-
-- 单色温亮度调节
-- `EC11` 旋钮调光，长按开关机
-- `TIM3 PWM + RC` 生成电流参考，不额外上 DAC 芯片
-- `ADC + DMA` 采样 `VOUT / VDS`
-- 裸机状态机：待机 / 软启动 / 运行 / 故障
-- `Boost` 动态余量控制
-- 过压保护
-- 风扇联动控制
-
----
-
-## 4. 硬件设计
-
-### 4.1 电源架构
-
-板级电源链路：
-
-```
-VIN -> MP4420 -> 12V -> MP4420 -> 5V -> MP20051 -> 3.3V
-```
-
-当前版本是宽压输入控制板，适用于 `60W-80W` 功率段补光灯。
-
-### 4.2 LED 驱动方式
-
-当前方案不是"MCU 低频 PWM 直接斩波 LED"，而是：
-
-1. `MP1907 + 外部 MOS + 33uH` 构成 `Boost`
-2. `TLV2372 + Q5 + 0.1R` 构成模拟恒流级
-3. `TIM3_CH2` 通过 `PWM + RC` 生成电流参考
-
-这样做的好处：输出更接近连续光，更适合视频和拍照场景。
-
-### 4.3 主要 BOM
-
-| 模块        | 当前器件                       | 作用                             |
-| --------- | -------------------------- | ------------------------------ |
-| MCU       | `STM32F030F4P6TR`          | `PWM / ADC / DMA / 状态机 / EC11` |
-| 用户交互      | `EC11`                     | 亮度调节 + 按压开关机                   |
-| 12V/5V 电源 | `MP4420`                   | 降压供电                           |
-| 3.3V 电源   | `MP20051`                  | LDO，MCU 供电                     |
-| Boost 驱动  | `MP1907GQ-Z`               | 驱动外部 MOS 和电感                   |
-| LED 恒流    | `TLV2372 + Q5 + R14(0.1R)` | 模拟恒流输出                         |
-
-### 4.4 设计亮点
-
-本项目在硬件与固件协同设计上，有三个值得关注的工程决策：
-
-#### 4.4.1 线性 MOS 选型
-
-功率级 `Q5` 选用 `IXTH30N50L2`（50V/0.1Ω N-MOS），配合 0.1Ω 采样电阻构成模拟恒流环。
-
-关键关系：
-
-```
-Vsense = Iled × 0.1Ω
-Vds_true = Vdrain_gnd - Vsense
-```
-
-`Vds_true` 才是真正决定 MOS 工作区的量，而非 `Vdrain_gnd` 单独值。设计手册详见 [`补光灯设计手册.pdf`](docs/补光灯设计手册.pdf)。
-
-#### 4.4.2 动态余量控制
-
-固件已实现动态余量策略：高亮度时让 Q5 接近全开，低亮度时保留更大调节余量。
-
-当前公式（简化线性版）：
-
-```
-Vds_keepalive_target_mv = 850 - 0.65 × light_dac_target_permille
-```
-
-限幅范围：`200mV ~ 800mV`
-
-亮度分段查表：
-
-| 亮度 (permille) | Vds_keepalive_target |
-| ------------- | -------------------- |
-| 0~150         | 800mV                |
-| 151~350       | 650mV                |
-| 351~600       | 500mV                |
-| 601~850       | 350mV                |
-| 851~1000      | 200mV                |
-
-详见 [`docs/DYNAMIC_HEADROOM_STRATEGY.md`](docs/DYNAMIC_HEADROOM_STRATEGY.md)。
-
-#### 4.4.3 整数优化
-
-`STM32F030F4P6` 无硬件 FPU，固件坚持整数运算避免软件浮点开销：
-
-- **Q8 滤波**：`raw_q8 = ((uint32_t)raw) << 8`（`program.c`）
-- **Q15 PI 控制器**：`DRV_PID_Q15_SHIFT = 15`（`drv_pid.c`）
-- **ADC 标定**：三点线性拟合全用整数 `VOUT_CAL_SLOPE_NUM = 127237`
-
-> "坚持整数运算，避开 F030 的软件浮点开销" — `program.c`
-
-详见 [`补光灯设计手册.pdf`](docs/补光灯设计手册.pdf)。
-
----
-
-## 5. 软件设计
-
-### 5.1 裸机还是 RTOS
-
-当前项目采用裸机，不上 RTOS。
-
-原因：
-
-- 任务规模还不需要 RTOS
-- `STM32F030F4P6` 资源有限
-- 控制时序更容易看清
-- 对量产类电源控制板，少一层复杂性就是少一层风险
-
-### 5.2 状态机
-
-系统包含四个状态：
-
-| 状态           | 说明       |
-| ------------ | -------- |
-| `STANDBY`    | 待机，等待开机  |
-| `SOFT_START` | 软启动，拉升余量 |
-| `RUNNING`    | 正常运行     |
-| `FAULT`      | 故障保护     |
-
-### 5.3 PWM 资源分配
-
-| 定时器        | 作用             | 当前频率     |
-| ---------- | -------------- | -------- |
-| `TIM1`     | `Boost` 互补 PWM | `100kHz` |
-| `TIM3_CH2` | 伪 DAC PWM      | `48kHz`  |
-| `TIM14`    | 控制节拍           | `2kHz`   |
-
----
-
-## 6. 快速开始
-
-### 6.1 开发环境
-
-- IDE：`Keil MDK-ARM`
-- 工程文件：`program/MDK-ARM/Fill_Light.uvprojx`
-- CubeMX 工程：`program/Fill_Light.ioc`
-
-### 6.2 编译步骤
+### 11.2 编译步骤
 
 1. 打开 `program/MDK-ARM/Fill_Light.uvprojx`
 2. 选择目标 `Fill_Light`
 3. 确认器件包 `Keil.STM32F0xx_DFP`
-4. 编译输出：
+4. 编译输出:
    - `program/MDK-ARM/Fill_Light/Fill_Light.axf`
    - `program/MDK-ARM/Fill_Light/Fill_Light.hex`
 
-### 6.3 上电运行
+### 11.3 上电运行
 
 - 上电后默认待机
 - 长按 `EC11` 进入运行
 - 旋转 `EC11` 调节亮度
 - 系统会先软启动，再进入正常运行
 
----
+## 12. MPS 器件支持
 
-## 7. 可扩展方向
+本项目当前使用的 MPS 器件主要包括:
 
-- 加双色温通道
-- 加无线控制或上位机参数配置
-- 风扇升级为温控 PWM
-- 增加更完整的开路 / 过热 / 异常采样保护
-- 亮度曲线加入 gamma 校正
-- 继续收敛量产版本 BOM
+| 模块        | 器件型号         | 说明            |
+| --------- | ------------ | ------------- |
+| 12V/5V 电源 | `MP4420`     | 降压芯片，给运放和驱动供电 |
+| 3.3V 电源   | `MP20051`    | LDO，MCU 供电    |
+| Boost 驱动  | `MP1907GQ-Z` | 驱动外部 MOS 和电感  |
+| 风扇开关      | `AO3400A`    | 低边风扇驱动        |
 
----
+如果需要申请样片，可参考:
 
-## 8. 许可证说明
+- [MPS 大学计划](https://www.monolithicpower.cn/cn/support/mps-cn-university.html)
+- [MPSNOW](https://www.monolithicpower.cn/cn/support/mps-now.html)
 
-本项目基于 **GNU General Public License v3.0 (GPL 3.0)** 开源许可协议发布。
+申请备注可填写: `Photography-Fill-Light`
 
-详细内容请参阅本仓库根目录下的 [`LICENSE`](LICENSE) 文件。
+## 13. 开源说明
 
-### 概要
-
-- **允许**：自由使用、修改、商业衍生
-- **要求**：衍生作品必须同样以 GPL 3.0 发布，并保留源码
-- **禁止**：不以任何方式提供源码
-
-### 引用方式
-
-```text
-Photography Fill Light
-Copyright (C) 2026 MPS China University Program
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License.
-```
+本项目当前按 **GNU General Public License v3.0 (GPL 3.0)** 进行开源发布，仓库根目录已补充正式的 [`LICENSE`](LICENSE) 文件。  
+如果后续发布到立创广场或其他开源平台，建议保持 README 与许可证说明一致，避免后续授权边界不清。
