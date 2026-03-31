@@ -170,7 +170,7 @@ Vds_true = Vdrain_gnd - Vsense
 </table>
 
 <p align="center">
-  <img src="docs/images/运行图.jpg" alt="样机运行图" width="300">
+  <img src="docs/images/运行图.png" alt="样机运行图" width="300">
 </p>
 <p align="center">样机运行图</p>
 
