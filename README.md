@@ -6,6 +6,8 @@
 本项目为面向 `60W-80W` 单色温 COB 的摄影补光灯控制板开源工程。  
 当前版本对应一套已完成主链路联调的工程样机，已实现 `EC11` 交互、软启动、Boost 母线控制、风扇联动、基础保护框架和仿真验证。
 
+需要更加详细和完整的资料与测试情况，请参考GITHUB:[Riven-Huang/Photography_Fill_Light: 大功率摄影补光灯](https://github.com/Riven-Huang/Photography_Fill_Light)，如果本项目有帮到你，希望可以为我点一个Star。
+
 选择线性恒流级的主要原因如下：
 
 1. 避免电流型 `Boost` 控制中的右半平面零点问题，降低控制难度
@@ -273,4 +275,3 @@ flowchart LR
 ## 13. 开源说明
 
 本项目当前按 **GNU General Public License v3.0 (GPL 3.0)** 进行开源发布，仓库根目录已补充正式的 [`LICENSE`](LICENSE) 文件。  
-如果后续发布到立创广场或其他开源平台，建议保持 README 与许可证说明一致，避免后续授权边界不清。
